@@ -275,6 +275,15 @@
 		CE4CA7BC1EE3649100373F11 /* BRActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4CA7BB1EE3649100373F11 /* BRActivityView.swift */; };
 		CE4DFB2C1E9BE5880014009E /* ReScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4DFB2B1E9BE5880014009E /* ReScanViewController.swift */; };
 		CE4DFB2E1E9C26DA0014009E /* ShareDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4DFB2D1E9C26DA0014009E /* ShareDataViewController.swift */; };
+		CE5C7B40200040C10005B206 /* blake.c in Sources */ = {isa = PBXBuildFile; fileRef = CE5C7B2D200040C10005B206 /* blake.c */; };
+		CE5C7B41200040C10005B206 /* bmw.c in Sources */ = {isa = PBXBuildFile; fileRef = CE5C7B2E200040C10005B206 /* bmw.c */; };
+		CE5C7B42200040C10005B206 /* cubehash.c in Sources */ = {isa = PBXBuildFile; fileRef = CE5C7B2F200040C10005B206 /* cubehash.c */; };
+		CE5C7B43200040C10005B206 /* groestl.c in Sources */ = {isa = PBXBuildFile; fileRef = CE5C7B30200040C10005B206 /* groestl.c */; };
+		CE5C7B44200040C10005B206 /* keccak.c in Sources */ = {isa = PBXBuildFile; fileRef = CE5C7B31200040C10005B206 /* keccak.c */; };
+		CE5C7B45200040C10005B206 /* Lyra2.c in Sources */ = {isa = PBXBuildFile; fileRef = CE5C7B32200040C10005B206 /* Lyra2.c */; };
+		CE5C7B46200040C10005B206 /* Lyra2RE.c in Sources */ = {isa = PBXBuildFile; fileRef = CE5C7B34200040C10005B206 /* Lyra2RE.c */; };
+		CE5C7B47200040C10005B206 /* skein.c in Sources */ = {isa = PBXBuildFile; fileRef = CE5C7B36200040C10005B206 /* skein.c */; };
+		CE5C7B48200040C10005B206 /* Sponge.c in Sources */ = {isa = PBXBuildFile; fileRef = CE5C7B3E200040C10005B206 /* Sponge.c */; };
 		CE5E6C941EB7964900A476DB /* WalletDisabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E6C931EB7964900A476DB /* WalletDisabledView.swift */; };
 		CE5E6C961EB8CCF500A476DB /* SupportCenterContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5E6C951EB8CCF500A476DB /* SupportCenterContainer.swift */; };
 		CE5E6C9A1EB9135000A476DB /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE5E6C991EB9135000A476DB /* Icon.xcassets */; };
@@ -1454,6 +1463,25 @@
 		CE4CA7BB1EE3649100373F11 /* BRActivityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BRActivityView.swift; path = src/Platform/BRActivityView.swift; sourceTree = "<group>"; };
 		CE4DFB2B1E9BE5880014009E /* ReScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReScanViewController.swift; path = src/ViewControllers/ReScanViewController.swift; sourceTree = "<group>"; };
 		CE4DFB2D1E9C26DA0014009E /* ShareDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareDataViewController.swift; path = src/ViewControllers/ShareDataViewController.swift; sourceTree = "<group>"; };
+		CE5C7B2D200040C10005B206 /* blake.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blake.c; sourceTree = "<group>"; };
+		CE5C7B2E200040C10005B206 /* bmw.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bmw.c; sourceTree = "<group>"; };
+		CE5C7B2F200040C10005B206 /* cubehash.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cubehash.c; sourceTree = "<group>"; };
+		CE5C7B30200040C10005B206 /* groestl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = groestl.c; sourceTree = "<group>"; };
+		CE5C7B31200040C10005B206 /* keccak.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = keccak.c; sourceTree = "<group>"; };
+		CE5C7B32200040C10005B206 /* Lyra2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Lyra2.c; sourceTree = "<group>"; };
+		CE5C7B33200040C10005B206 /* Lyra2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lyra2.h; sourceTree = "<group>"; };
+		CE5C7B34200040C10005B206 /* Lyra2RE.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Lyra2RE.c; sourceTree = "<group>"; };
+		CE5C7B35200040C10005B206 /* Lyra2RE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lyra2RE.h; sourceTree = "<group>"; };
+		CE5C7B36200040C10005B206 /* skein.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = skein.c; sourceTree = "<group>"; };
+		CE5C7B37200040C10005B206 /* sph_blake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_blake.h; sourceTree = "<group>"; };
+		CE5C7B38200040C10005B206 /* sph_bmw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_bmw.h; sourceTree = "<group>"; };
+		CE5C7B39200040C10005B206 /* sph_cubehash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_cubehash.h; sourceTree = "<group>"; };
+		CE5C7B3A200040C10005B206 /* sph_groestl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_groestl.h; sourceTree = "<group>"; };
+		CE5C7B3B200040C10005B206 /* sph_keccak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_keccak.h; sourceTree = "<group>"; };
+		CE5C7B3C200040C10005B206 /* sph_skein.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_skein.h; sourceTree = "<group>"; };
+		CE5C7B3D200040C10005B206 /* sph_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sph_types.h; sourceTree = "<group>"; };
+		CE5C7B3E200040C10005B206 /* Sponge.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Sponge.c; sourceTree = "<group>"; };
+		CE5C7B3F200040C10005B206 /* Sponge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sponge.h; sourceTree = "<group>"; };
 		CE5E6C931EB7964900A476DB /* WalletDisabledView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalletDisabledView.swift; path = src/Views/WalletDisabledView.swift; sourceTree = "<group>"; };
 		CE5E6C951EB8CCF500A476DB /* SupportCenterContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SupportCenterContainer.swift; path = src/ViewControllers/SupportCenterContainer.swift; sourceTree = "<group>"; };
 		CE5E6C991EB9135000A476DB /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
@@ -2759,7 +2787,7 @@
 			isa = PBXGroup;
 			children = (
 				22A9A9971DF63426000F0016 /* libbz2 */,
-				75DC77AB1DAA05B500932D9A /* breadwallet-core */,
+				75DC77AB1DAA05B500932D9A /* monawallet-core */,
 				755CD3831DAA0E3E0075898E /* unbound */,
 				755CD7031DAA16810075898E /* nettle */,
 				75FEFD1F1DAEE7A400203D3A /* sqlite3 */,
@@ -2767,9 +2795,10 @@
 			name = Modules;
 			sourceTree = "<group>";
 		};
-		75DC77AB1DAA05B500932D9A /* breadwallet-core */ = {
+		75DC77AB1DAA05B500932D9A /* monawallet-core */ = {
 			isa = PBXGroup;
 			children = (
+				CE5C7B2C200040C10005B206 /* Lyra2RE */,
 				75DC77AE1DAA05B500932D9A /* BRAddress.c */,
 				75DC77AF1DAA05B500932D9A /* BRAddress.h */,
 				75DC77B01DAA05B500932D9A /* BRArray.h */,
@@ -2807,8 +2836,8 @@
 				755CD3191DAA0A110075898E /* secp256k1 */,
 				75DC783C1DAA05B500932D9A /* test.c */,
 			);
-			name = "breadwallet-core";
-			path = "Modules/breadwallet-core";
+			name = "monawallet-core";
+			path = "Modules/monawallet-core";
 			sourceTree = "<group>";
 		};
 		75FEFD1F1DAEE7A400203D3A /* sqlite3 */ = {
@@ -3023,6 +3052,32 @@
 			name = Platform;
 			sourceTree = "<group>";
 		};
+		CE5C7B2C200040C10005B206 /* Lyra2RE */ = {
+			isa = PBXGroup;
+			children = (
+				CE5C7B2D200040C10005B206 /* blake.c */,
+				CE5C7B2E200040C10005B206 /* bmw.c */,
+				CE5C7B2F200040C10005B206 /* cubehash.c */,
+				CE5C7B30200040C10005B206 /* groestl.c */,
+				CE5C7B31200040C10005B206 /* keccak.c */,
+				CE5C7B32200040C10005B206 /* Lyra2.c */,
+				CE5C7B33200040C10005B206 /* Lyra2.h */,
+				CE5C7B34200040C10005B206 /* Lyra2RE.c */,
+				CE5C7B35200040C10005B206 /* Lyra2RE.h */,
+				CE5C7B36200040C10005B206 /* skein.c */,
+				CE5C7B37200040C10005B206 /* sph_blake.h */,
+				CE5C7B38200040C10005B206 /* sph_bmw.h */,
+				CE5C7B39200040C10005B206 /* sph_cubehash.h */,
+				CE5C7B3A200040C10005B206 /* sph_groestl.h */,
+				CE5C7B3B200040C10005B206 /* sph_keccak.h */,
+				CE5C7B3C200040C10005B206 /* sph_skein.h */,
+				CE5C7B3D200040C10005B206 /* sph_types.h */,
+				CE5C7B3E200040C10005B206 /* Sponge.c */,
+				CE5C7B3F200040C10005B206 /* Sponge.h */,
+			);
+			path = Lyra2RE;
+			sourceTree = "<group>";
+		};
 		CE6D0E5A1E14BF8400137DF1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -3190,7 +3245,7 @@
 /* Begin PBXLegacyTarget section */
 		759DA0D71DAC8668008CC49B /* submodules */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "-c 'git submodule init && git submodule update && git -C Modules/breadwallet-core submodule init && git -C Modules/breadwallet-core submodule update'";
+			buildArgumentsString = "-c 'git submodule init && git submodule update && git -C Modules/monawallet-core submodule init && git -C Modules/monawallet-core submodule update'";
 			buildConfigurationList = 759DA0DA1DAC8668008CC49B /* Build configuration list for PBXLegacyTarget "submodules" */;
 			buildPhases = (
 			);
@@ -3877,6 +3932,7 @@
 				2228734F1E916FC30044BA15 /* BRAPIClient+Wallet.swift in Sources */,
 				CEAA9EA81DC3342E0066731D /* PinView.swift in Sources */,
 				CE1D84B61EAEB2F4002A5D7B /* UIBarButtonItem+Additions.swift in Sources */,
+				CE5C7B47200040C10005B206 /* skein.c in Sources */,
 				CE5E6C961EB8CCF500A476DB /* SupportCenterContainer.swift in Sources */,
 				CE4B6C1A1E219CA600CF935B /* WalletCoordinator.swift in Sources */,
 				CE6D0E5C1E14BFA700137DF1 /* KeyboardNotificationInfo.swift in Sources */,
@@ -3899,6 +3955,7 @@
 				CECCE5B01E04AD7600D99448 /* DescriptionSendCell.swift in Sources */,
 				CE44BA1B1F33BFC500392A1A /* NodeSelectorViewController.swift in Sources */,
 				CE36454A1E7B426B0079D0CF /* ClearNumberPad.swift in Sources */,
+				CE5C7B46200040C10005B206 /* Lyra2RE.c in Sources */,
 				CE124D001E69170900DFA146 /* SyncingView.swift in Sources */,
 				CE20C90E1DBE52B000C8397A /* UIView+BRWAdditions.swift in Sources */,
 				CE6314831E08E5BB00D4AFE0 /* UIView+InitAdditions.swift in Sources */,
@@ -3956,6 +4013,7 @@
 				CEC6AA4B1DEFD24C00EE5AFD /* MenuButtonType.swift in Sources */,
 				CE4CA7BC1EE3649100373F11 /* BRActivityView.swift in Sources */,
 				CEC6AA421DEFC88F00EE5AFD /* ReceiveViewController.swift in Sources */,
+				CE5C7B44200040C10005B206 /* keccak.c in Sources */,
 				CEE20C2D1EA288FA0086F724 /* UpdatingLabel.swift in Sources */,
 				CE3D4C591EF743EF0016B1C8 /* Functions.swift in Sources */,
 				CEE20C341EA5B4550086F724 /* ArticleIds.swift in Sources */,
@@ -3969,6 +4027,7 @@
 				CE916E331EDA800E00D641D6 /* UserDefaultsUpdater.swift in Sources */,
 				CE20C9111DBE5B6F00C8397A /* Circle.swift in Sources */,
 				CE20C9071DBC587200C8397A /* StartViewController.swift in Sources */,
+				CE5C7B42200040C10005B206 /* cubehash.c in Sources */,
 				223DB2151DF654940076A151 /* WalletManager.swift in Sources */,
 				22A9A94E1DF61945000F0016 /* BRHTTPIndexMiddleware.swift in Sources */,
 				CE124CF81E67A8E500DFA146 /* TransactionDirection.swift in Sources */,
@@ -3979,6 +4038,7 @@
 				22A9A9551DF61945000F0016 /* BRTar.swift in Sources */,
 				CE14E4091E4D506000AEA83A /* TransactionDetailsViewController.swift in Sources */,
 				CEAA9E971DC18E1F0066731D /* PhraseView.swift in Sources */,
+				CE5C7B45200040C10005B206 /* Lyra2.c in Sources */,
 				CEF3E82F1DE534C5007C0A9E /* GradientView.swift in Sources */,
 				CE6D0F991DE8B75900BD4BCF /* DismissModalAnimator.swift in Sources */,
 				CE4C1CC61ED65D830063E184 /* DrawableCircle.swift in Sources */,
@@ -3999,15 +4059,18 @@
 				CE25BF911DF9ADE700BC67B6 /* UIImage+Utils.swift in Sources */,
 				CEBF33041DDE17A600348FC6 /* Transaction.swift in Sources */,
 				CEAA9E911DC0FDFE0066731D /* UIViewPropertyAnimator+BRWAdditions.swift in Sources */,
+				CE5C7B40200040C10005B206 /* blake.c in Sources */,
 				22E773041EE7813000397E0E /* Bonjour.swift in Sources */,
 				CEAA9EA01DC2F9F50066731D /* UIFont+BRWAdditions.swift in Sources */,
 				CEC6AA491DEFD00100EE5AFD /* MenuButton.swift in Sources */,
 				CEF61B121ECF52C700C7EA6A /* AmountViewController.swift in Sources */,
+				CE5C7B43200040C10005B206 /* groestl.c in Sources */,
 				CEBF32F21DDCE10D00348FC6 /* AccountHeaderView.swift in Sources */,
 				CECCE5B21E04B00D00D99448 /* SendCell.swift in Sources */,
 				CE6DCC301E6666470044257B /* NonScrollingCollectionView.swift in Sources */,
 				22A9A9471DF61945000F0016 /* BRAPIProxy.swift in Sources */,
 				CE20C9011DBBFFF800C8397A /* Actions.swift in Sources */,
+				CE5C7B41200040C10005B206 /* bmw.c in Sources */,
 				CE20C9191DBE7B8200C8397A /* State.swift in Sources */,
 				CEEC70811E90C04700EF788E /* SeparatorCell.swift in Sources */,
 				CE20C8FE1DBB133A00C8397A /* SimpleRedux.swift in Sources */,
@@ -4037,6 +4100,7 @@
 				22A9A9481DF61945000F0016 /* BRBitID.swift in Sources */,
 				CEBF32F41DDCE12900348FC6 /* AccountFooterView.swift in Sources */,
 				CE9057181DFF0FA8006BA848 /* String+Additions.swift in Sources */,
+				CE5C7B48200040C10005B206 /* Sponge.c in Sources */,
 				CED341331EF5A5C00014912A /* InAppAlert.swift in Sources */,
 				CE47A8E01F7DA54000FF35BA /* UIScreen+Additions.swift in Sources */,
 				CE3754AD1DDE6E080045B0CB /* MaskedShadow.swift in Sources */,
@@ -4515,8 +4579,8 @@
 					"$(inherited)",
 				);
 				HEADER_SEARCH_PATHS = (
-					"${SRCROOT}/Modules/breadwallet-core",
-					"${SRCROOT}/Modules/breadwallet-core/secp256k1",
+					"${SRCROOT}/Modules/monawallet-core",
+					"${SRCROOT}/Modules/monawallet-core/secp256k1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -4529,8 +4593,8 @@
 				CLANG_WARN_COMMA = NO;
 				DEVELOPMENT_TEAM = 4R7S6N88W9;
 				HEADER_SEARCH_PATHS = (
-					"${SRCROOT}/Modules/breadwallet-core",
-					"${SRCROOT}/Modules/breadwallet-core/secp256k1",
+					"${SRCROOT}/Modules/monawallet-core",
+					"${SRCROOT}/Modules/monawallet-core/secp256k1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -4668,10 +4732,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = "breadwallet WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -4685,10 +4749,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = "breadwallet WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -4703,10 +4767,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				IBSC_MODULE = breadwallet_WatchKit_Extension;
 				INFOPLIST_FILE = "breadwallet WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -4720,10 +4784,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				IBSC_MODULE = breadwallet_WatchKit_Extension;
 				INFOPLIST_FILE = "breadwallet WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -4739,12 +4803,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = breadwallet/breadwallet.entitlements;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = breadwallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DDebug";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -4759,12 +4823,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = breadwallet/breadwallet.entitlements;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = breadwallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -4776,10 +4840,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = breadwalletTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwalletTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.breadwalletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/breadwallet.app/breadwallet";
@@ -4791,10 +4855,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = breadwalletTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwalletTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.breadwalletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/breadwallet.app/breadwallet";
@@ -4805,10 +4869,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = breadwalletUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwalletUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.breadwalletUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = breadwallet;
@@ -4819,10 +4883,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = breadwalletUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwalletUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.breadwalletUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = breadwallet;
@@ -4833,11 +4897,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -4847,11 +4911,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -4861,10 +4925,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -4874,10 +4938,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -4886,11 +4950,11 @@
 		75A2A8251DA5938500A983D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.NotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -4900,11 +4964,11 @@
 		75A2A8261DA5938500A983D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.NotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -5050,12 +5114,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = breadwallet/breadwallet.entitlements;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = breadwallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DDebug -DScreenshots -DTestnet";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -5068,10 +5132,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = breadwalletTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwalletTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.breadwalletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/breadwallet.app/breadwallet";
@@ -5082,10 +5146,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = breadwalletUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwalletUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.breadwalletUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = breadwallet;
@@ -5097,10 +5161,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				IBSC_MODULE = breadwallet_WatchKit_Extension;
 				INFOPLIST_FILE = "breadwallet WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -5113,10 +5177,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = "breadwallet WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -5130,11 +5194,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -5144,10 +5208,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -5156,11 +5220,11 @@
 		CEA7E6901F09AC6A001F8C27 /* Screenshots */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.NotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -5192,8 +5256,8 @@
 					"BITCOIN_TESTNET=1",
 				);
 				HEADER_SEARCH_PATHS = (
-					"${SRCROOT}/Modules/breadwallet-core",
-					"${SRCROOT}/Modules/breadwallet-core/secp256k1",
+					"${SRCROOT}/Modules/monawallet-core",
+					"${SRCROOT}/Modules/monawallet-core/secp256k1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -5352,12 +5416,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = breadwallet/breadwallet.entitlements;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = breadwallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DDebug -DTestnet";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -5370,10 +5434,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = breadwalletTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwalletTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.breadwalletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/breadwallet.app/breadwallet";
@@ -5384,10 +5448,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = breadwalletUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwalletUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.breadwalletUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = breadwallet;
@@ -5399,10 +5463,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				IBSC_MODULE = breadwallet_WatchKit_Extension;
 				INFOPLIST_FILE = "breadwallet WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -5415,10 +5479,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = "breadwallet WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -5432,11 +5496,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -5446,10 +5510,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -5458,11 +5522,11 @@
 		CEA7E6A31F0AAA84001F8C27 /* Testnet */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.NotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -5494,8 +5558,8 @@
 					"BITCOIN_TESTNET=1",
 				);
 				HEADER_SEARCH_PATHS = (
-					"${SRCROOT}/Modules/breadwallet-core",
-					"${SRCROOT}/Modules/breadwallet-core/secp256k1",
+					"${SRCROOT}/Modules/monawallet-core",
+					"${SRCROOT}/Modules/monawallet-core/secp256k1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -5647,12 +5711,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = breadwallet/breadwallet.entitlements;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/**";
 				INFOPLIST_FILE = breadwallet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-DTestflight -DDebug";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -5664,10 +5728,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = breadwalletTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwalletTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.breadwalletTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/breadwallet.app/breadwallet";
@@ -5678,10 +5742,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = breadwalletUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwalletUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.breadwalletUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = breadwallet;
@@ -5693,10 +5757,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				IBSC_MODULE = breadwallet_WatchKit_Extension;
 				INFOPLIST_FILE = "breadwallet WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -5709,10 +5773,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = "breadwallet WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -5726,11 +5790,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -5740,10 +5804,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -5752,11 +5816,11 @@
 		CEE0EF5C1EBF8D7F0018DB36 /* Testflight */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEVELOPMENT_TEAM = 4R7S6N88W9;
+				DEVELOPMENT_TEAM = 2SJNZA86RD;
 				INFOPLIST_FILE = NotificationServiceExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.voisine.breadwallet.NotificationServiceExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hachiro.monawallet.NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -5783,8 +5847,8 @@
 				CLANG_WARN_COMMA = NO;
 				DEVELOPMENT_TEAM = 4R7S6N88W9;
 				HEADER_SEARCH_PATHS = (
-					"${SRCROOT}/Modules/breadwallet-core",
-					"${SRCROOT}/Modules/breadwallet-core/secp256k1",
+					"${SRCROOT}/Modules/monawallet-core",
+					"${SRCROOT}/Modules/monawallet-core/secp256k1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
