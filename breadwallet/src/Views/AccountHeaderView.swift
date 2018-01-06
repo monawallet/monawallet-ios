@@ -1,4 +1,4 @@
-//
+﻿//
 //  AccountHeaderView.swift
 //  breadwallet
 //
@@ -188,7 +188,7 @@ class AccountHeaderView : UIView, GradientDrawable, Subscriber {
 
         logo.constrain([
             logo.leadingAnchor.constraint(equalTo: leadingAnchor, constant: C.padding[2]),
-            logo.topAnchor.constraint(equalTo: topAnchor, constant: 30.0),
+            logo.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -C.padding[10]),
             logo.heightAnchor.constraint(equalTo: logo.widthAnchor, multiplier: C.Sizes.logoAspectRatio),
             logo.widthAnchor.constraint(equalTo: widthAnchor, multiplier: logoWidth) ])
         modeLabel.constrain([
@@ -226,7 +226,7 @@ class AccountHeaderView : UIView, GradientDrawable, Subscriber {
                             }
                             self.exchangeRate = $0.currentRate
                         })
-        
+
         store.lazySubscribe(self,
                         selector: { $0.maxDigits != $1.maxDigits},
                         callback: {

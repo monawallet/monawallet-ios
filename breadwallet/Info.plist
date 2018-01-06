@@ -77,10 +77,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>bitid</string>
+			<string>monaid</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>bitid</string>
+				<string>monaid</string>
 			</array>
 		</dict>
 	</array>
@@ -97,6 +97,8 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Used to scan barcodes</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Used to Unlock app &amp; Authorize payments</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Used to determine where you are - never recorded or shared with anyone</string>
 	<key>NSPhotoLibraryUsageDescription</key>
