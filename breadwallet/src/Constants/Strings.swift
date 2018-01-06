@@ -554,6 +554,6 @@ enum S {
 
     enum Welcome {
         static let title = NSLocalizedString("Welcome.title", value: "Welcome to MonaWallet!", comment: "Welcome view title")
-        static let body = NSLocalizedString("Welcome.body", value: "MonaWallet has changed its name to MonaWallet, with a brand new look and some new features.\n\nIf you need help, look for the (?) in the top right of most screens.", comment: "Welcome view body text")
+        static let body = NSLocalizedString("Welcome.body", value: "MonaWallet was developed based on bitcoin wallet Bread.\n\nIf you need help, look for the (?) in the top right of most screens.", comment: "Welcome view body text")
     }
 }
