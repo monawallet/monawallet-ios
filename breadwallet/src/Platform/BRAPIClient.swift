@@ -1,4 +1,4 @@
-//
+﻿//
 //  BRAPIClient.swift
 //  BreadWallet
 //
@@ -73,9 +73,9 @@ open class BRAPIClient : NSObject, URLSessionDelegate, URLSessionTaskDelegate, B
     
     // host is the server(s) on which the API is hosted
     #if Testflight || Debug
-    var host = "stage.breadwallet.com"
+    var host = "ko8mb3jwqc.execute-api.ap-northeast-1.amazonaws.com/v1"    //TODO:add DNS
     #else
-    var host = "api.breadwallet.com"
+    var host = "ko8mb3jwqc.execute-api.ap-northeast-1.amazonaws.com/v1"    //TODO:add DNS
     #endif
     
     // isFetchingAuth is set to true when a request is currently trying to renew authentication (the token)
@@ -155,7 +155,7 @@ open class BRAPIClient : NSObject, URLSessionDelegate, URLSessionTaskDelegate, B
             let authKey = authKey,
             let signingData = mutableRequest.signingString.data(using: .utf8) {
             let sig = signingData.sha256_2.compactSign(key: authKey)
-            let hval = "bread \(token):\(sig.base58)"
+            let hval = "MonaWallet \(token):\(sig.base58)"
             mutableRequest.setValue(hval, forHTTPHeaderField: "Authorization")
         }
         return mutableRequest
@@ -163,7 +163,7 @@ open class BRAPIClient : NSObject, URLSessionDelegate, URLSessionTaskDelegate, B
     
     private func decorateRequest(_ request: URLRequest) -> URLRequest {
         var actualRequest = request
-        actualRequest.setValue("\(E.isTestnet ? 1 : 0)", forHTTPHeaderField: "X-Bitcoin-Testnet")
+        actualRequest.setValue("\(E.isTestnet ? 1 : 0)", forHTTPHeaderField: "X-Monacoin-Testnet")
         actualRequest.setValue("\((E.isTestFlight || E.isDebug) ? 1 : 0)", forHTTPHeaderField: "X-Testflight")
         actualRequest.setValue(Locale.current.identifier, forHTTPHeaderField: "Accept-Language")
         return actualRequest
@@ -329,7 +329,7 @@ open class BRAPIClient : NSObject, URLSessionDelegate, URLSessionTaskDelegate, B
                 // follow the redirect if we're interacting with our API
                 actualRequest = decorateRequest(request)
                 log("redirecting \(String(describing: currentReq.url)) to \(String(describing: request.url))")
-                if let curAuth = currentReq.allHTTPHeaderFields?["Authorization"], curAuth.hasPrefix("bread") {
+                if let curAuth = currentReq.allHTTPHeaderFields?["Authorization"], curAuth.hasPrefix("MonaWallets") {
                     // add authentication because the previous request was authenticated
                     log("adding authentication to redirected request")
                     actualRequest = signRequest(actualRequest)
@@ -382,7 +382,7 @@ fileprivate extension HTTPURLResponse {
     var isBreadChallenge: Bool {
         if let headers = allHeaderFields as? [String: String],
             let challenge = headers.get(lowercasedKey: "www-authenticate") {
-            if challenge.lowercased().hasPrefix("bread") {
+            if challenge.lowercased().hasPrefix("MonaWallet") {
                 return true
             }
         }

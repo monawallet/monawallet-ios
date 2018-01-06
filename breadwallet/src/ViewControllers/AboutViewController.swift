@@ -1,4 +1,4 @@
-//
+﻿//
 //  AboutViewController.swift
 //  breadwallet
 //

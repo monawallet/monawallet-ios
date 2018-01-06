@@ -1,4 +1,4 @@
-//
+﻿//
 //  Amount.swift
 //  breadwallet
 //
@@ -61,16 +61,16 @@ struct Amount {
         format.numberStyle = .currency
         format.generatesDecimalNumbers = true
         format.negativeFormat = format.positiveFormat.replacingCharacters(in: format.positiveFormat.range(of: "#")!, with: "-#")
-        format.currencyCode = "XBT"
+        format.currencyCode = "MONA"
 
         switch maxDigits {
-        case 2:
-            format.currencySymbol = "\(S.Symbols.bits)\(S.Symbols.narrowSpace)"
+        case 2: // μMONA
+            format.currencySymbol = "m\(S.Symbols.bits)\(S.Symbols.narrowSpace)"
             format.maximum = (C.maxMoney/C.satoshis)*100000 as NSNumber
-        case 5:
-            format.currencySymbol = "m\(S.Symbols.btc)\(S.Symbols.narrowSpace)"
+        case 5: // mMONA
+            format.currencySymbol = "\(S.Symbols.bits)\(S.Symbols.narrowSpace)"
             format.maximum = (C.maxMoney/C.satoshis)*1000 as NSNumber
-        case 8:
+        case 8: // MONA
             format.currencySymbol = "\(S.Symbols.btc)\(S.Symbols.narrowSpace)"
             format.maximum = C.maxMoney/C.satoshis as NSNumber
         default:
@@ -147,16 +147,16 @@ struct DisplayAmount {
         format.numberStyle = .currency
         format.generatesDecimalNumbers = true
         format.negativeFormat = format.positiveFormat.replacingCharacters(in: format.positiveFormat.range(of: "#")!, with: "-#")
-        format.currencyCode = "XBT"
+        format.currencyCode = "MONA"
 
         switch state.maxDigits {
-        case 2:
-            format.currencySymbol = "\(S.Symbols.bits)\(S.Symbols.narrowSpace)"
+        case 2: // μMONA
+            format.currencySymbol = "m\(S.Symbols.bits)\(S.Symbols.narrowSpace)"
             format.maximum = (C.maxMoney/C.satoshis)*100000 as NSNumber
-        case 5:
-            format.currencySymbol = "m\(S.Symbols.btc)\(S.Symbols.narrowSpace)"
+        case 5: // mMONA
+            format.currencySymbol = "\(S.Symbols.bits)\(S.Symbols.narrowSpace)"
             format.maximum = (C.maxMoney/C.satoshis)*1000 as NSNumber
-        case 8:
+        case 8: // MONA
             format.currencySymbol = "\(S.Symbols.btc)\(S.Symbols.narrowSpace)"
             format.maximum = C.maxMoney/C.satoshis as NSNumber
         default:

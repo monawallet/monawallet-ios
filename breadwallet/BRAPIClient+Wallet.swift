@@ -1,4 +1,4 @@
-//
+﻿//
 //  BRAPIClient+Wallet.swift
 //  breadwallet
 //
@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let fallbackRatesURL = "https://bitpay.com/api/rates"
+private let fallbackRatesURL = "https://ko8mb3jwqc.execute-api.ap-northeast-1.amazonaws.com/v1/rates"	//TODO:add DNS
 
 extension BRAPIClient {
     func feePerKb(_ handler: @escaping (_ fees: Fees, _ error: String?) -> Void) {
@@ -51,9 +51,8 @@ extension BRAPIClient {
                     }
                     handler(array.flatMap { Rate(data: $0) }, nil)
                 } else {
-                    guard let dict = parsedData as? [String: Any],
-                        let array = dict["body"] as? [Any] else {
-                            return self.exchangeRates(isFallback: true, handler)
+                    guard let array = parsedData as? [Any] else {
+                        return handler([], "/rates didn't return an array")
                     }
                     handler(array.flatMap { Rate(data: $0) }, nil)
                 }

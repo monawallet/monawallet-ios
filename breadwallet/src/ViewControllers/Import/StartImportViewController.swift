@@ -1,4 +1,4 @@
-//
+﻿//
 //  StartImportViewController.swift
 //  breadwallet
 //
@@ -9,9 +9,9 @@
 import UIKit
 import BRCore
 
-private let mainURL = "https://api.breadwallet.com/q/addrs/utxo"
-private let fallbackURL = "https://insight.bitpay.com/api/addrs/utxo"
-private let testnetURL = "https://test-insight.bitpay.com/api/addrs/utxo"
+private let mainURL = "https://mona.insight.monaco-ex.org/insight-api-monacoin/addrs/utxo"
+private let fallbackURL = "https://mona.insight.monaco-ex.org/insight-api-monacoin/addrs/utxo"
+private let testnetURL = "https://testnet-mona.insight.monaco-ex.org/insight-api-monacoin/addrs/utxo"
 
 class StartImportViewController : UIViewController {
 

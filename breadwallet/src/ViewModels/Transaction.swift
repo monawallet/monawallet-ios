@@ -1,4 +1,4 @@
-//
+﻿//
 //  Transaction.swift
 //  breadwallet
 //
@@ -95,7 +95,7 @@ class Transaction {
             nf.currencySymbol = currentRate.currencySymbol
             nf.numberStyle = .currency
             if let rateString = nf.string(from: metaData.exchangeRate as NSNumber) {
-                let secondLine = "\(rateString)/btc \(prefix)\(String(format: "%.2f", difference))%"
+                let secondLine = "\(rateString)/MONA \(prefix)\(String(format: "%.2f", difference))%"
                 exchangeRateInfo = "\(firstLine)\n\(secondLine)"
             }
         }

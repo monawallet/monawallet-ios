@@ -1,4 +1,4 @@
-//
+﻿//
 //  DefaultCurrencyViewController.swift
 //  breadwallet
 //
@@ -39,7 +39,7 @@ class DefaultCurrencyViewController : UITableViewController, Subscriber {
     }
 
     private let bitcoinLabel = UILabel(font: .customBold(size: 14.0), color: .grayTextTint)
-    private let bitcoinSwitch = UISegmentedControl(items: ["Bits (\(S.Symbols.bits))", "BTC (\(S.Symbols.btc))"])
+    private let bitcoinSwitch = UISegmentedControl(items: ["mMONA (\(S.Symbols.bits))", "MONA (\(S.Symbols.btc))"])
     private let rateLabel = UILabel(font: .customBody(size: 16.0), color: .darkText)
     private var header: UIView?
 
@@ -142,7 +142,7 @@ class DefaultCurrencyViewController : UITableViewController, Subscriber {
             if newIndex == 1 {
                 myself.store.perform(action: MaxDigits.set(8))
             } else {
-                myself.store.perform(action: MaxDigits.set(2))
+                myself.store.perform(action: MaxDigits.set(5))
             }
         }
 

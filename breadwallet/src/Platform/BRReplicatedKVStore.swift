@@ -1,4 +1,4 @@
-//
+﻿//
 //  BRReplicatedKVStore.swift
 //  BreadWallet
 //
@@ -122,7 +122,7 @@ open class BRReplicatedKVStore: NSObject {
     init(encryptionKey: BRKey, remoteAdaptor: BRRemoteKVStoreAdaptor) throws {
         key = encryptionKey
         remote = remoteAdaptor
-        dbQueue = DispatchQueue(label: "com.voisine.breadwallet.kvDBQueue", attributes: [])
+        dbQueue = DispatchQueue(label: "com.hachiro.breadwallet.kvDBQueue", attributes: [])
         super.init()
         try self.openDatabase()
         try self.migrateDatabase()
@@ -494,7 +494,7 @@ open class BRReplicatedKVStore: NSObject {
             
             self.log("Syncing \(allKeyData.count) keys")
             var failures = 0
-            let q = DispatchQueue(label: "com.voisine.breadwallet.kvSyncQueue", attributes: DispatchQueue.Attributes.concurrent)
+            let q = DispatchQueue(label: "com.hachiro.monawallet.kvSyncQueue", attributes: DispatchQueue.Attributes.concurrent)
             let grp = DispatchGroup()
             let seph = DispatchSemaphore(value: 10)
             
@@ -740,7 +740,7 @@ open class BRReplicatedKVStore: NSObject {
     
     // validates the key. keys can not start with a _
     fileprivate func checkKey(_ key: String) throws {
-        let m = keyRegex.matches(in: key, options: [], range: NSMakeRange(0, key.characters.count))
+        let m = keyRegex.matches(in: key, options: [], range: NSMakeRange(0, key.count))
         if m.count != 1 {
             throw BRReplicatedKVStoreError.invalidKey
         }
