@@ -36,8 +36,7 @@ class ConfirmationViewController : UIViewController, ContentBoxPresenter {
     let blurView = UIVisualEffectView()
     let effect = UIBlurEffect(style: .dark)
 
-    var successCallback: (() -> Void)?
-    var cancelCallback: (() -> Void)?
+    var callback: (() -> Void)?
 
     private let header = ModalHeaderView(title: S.Confirmation.title, style: .dark)
     private let cancel = ShadowButton(title: S.Button.cancel, type: .secondary)
@@ -163,13 +162,13 @@ class ConfirmationViewController : UIViewController, ContentBoxPresenter {
         total.text = displayTotal.description
 
         cancel.tap = strongify(self) { myself in
-            myself.cancelCallback?()
+            myself.dismiss(animated: true, completion: nil)
         }
         header.closeCallback = strongify(self) { myself in
-            myself.cancelCallback?()
+            myself.dismiss(animated: true, completion: nil)
         }
         sendButton.tap = strongify(self) { myself in
-            myself.successCallback?()
+            myself.callback?()
         }
 
         contentBox.layer.cornerRadius = 6.0
