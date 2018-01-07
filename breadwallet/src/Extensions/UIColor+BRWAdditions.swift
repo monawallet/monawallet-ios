@@ -41,11 +41,11 @@ extension UIColor {
 
     // MARK: Gradient
     static var gradientStart: UIColor {
-        return UIColor(red: 247.0/255.0, green: 164.0/255.0, blue: 69.0/255.0, alpha: 1.0)
+        return UIColor(red: 31.0/255.0, green: 193.0/255.0, blue: 208.0/255.0, alpha: 1.0)
     }
 
     static var gradientEnd: UIColor {
-        return UIColor(red: 252.0/255.0, green: 83.0/255.0, blue: 148.0/255.0, alpha: 1.0)
+        return UIColor(red: 10.0/255.0, green: 167.0/255.0, blue: 184.0/255.0, alpha: 1.0)
     }
 
     static var offWhite: UIColor {
