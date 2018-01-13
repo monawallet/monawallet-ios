@@ -16,6 +16,8 @@ enum ArticleIds {
     static let paperKey = "paper-key"
     static let enableTouchId = "enable-fingerprint-authentication"
     static let touchIdSpendingLimit = "fingerprint-spending-limit"
+    static let enableFaceId = "enable-faceprint-authentication"
+    static let faceIdSpendingLimit = "faceprint-spending-limit"
     static let transactionDetails = "transaction-details"
     static let manageWallet = "manage-wallet"
     static let receiveBitcoin = "receive-bitcoin"
