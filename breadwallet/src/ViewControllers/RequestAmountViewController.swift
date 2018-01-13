@@ -1,4 +1,4 @@
-//
+﻿//
 //  RequestAmountViewController.swift
 //  breadwallet
 //
@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let qrSize: CGSize = CGSize(width: 186.0, height: 186.0)
+private var qrSize: CGSize = CGSize(width: 186.0, height: 186.0)
 private let smallButtonHeight: CGFloat = 32.0
 private let buttonPadding: CGFloat = 20.0
 private let smallSharePadding: CGFloat = 12.0
@@ -22,6 +22,10 @@ class RequestAmountViewController : UIViewController {
     init(wallet: BRWallet, store: Store) {
         self.wallet = wallet
         amountView = AmountViewController(store: store, isPinPadExpandedAtLaunch: true, isRequesting: true)
+        if(UIScreen.main.bounds.size.height <= 568) // iPhone SE & 4
+        {
+            qrSize = CGSize(width: 128.0, height: 128.0)
+        }
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -212,6 +216,12 @@ class RequestAmountViewController : UIViewController {
             alertView.toggle()
             self.parent?.view.layoutIfNeeded()
         }, completion: { _ in
+            let superView = self.view.superview?.superview
+            let scrollView = superView as? UIScrollView
+            if(scrollView != nil) {
+                let bottomOffset = CGPoint(x: 0, y: (scrollView?.contentSize.height)! - (scrollView?.bounds.size.height)!)
+                scrollView?.setContentOffset(bottomOffset, animated: true)
+            }
             alertView.isExpanded = !alertView.isExpanded
             self.share.isEnabled = true
             self.address.isUserInteractionEnabled = true
