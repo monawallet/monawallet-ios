@@ -1,4 +1,4 @@
-﻿//
+//
 //  ModalPresenter.swift
 //  breadwallet
 //
@@ -196,7 +196,9 @@ class ModalPresenter : Subscriber, Trackable {
         supportCenter.modalPresentationStyle = .overFullScreen
         supportCenter.modalPresentationCapturesStatusBarAppearance = true
         supportCenter.transitioningDelegate = supportCenter
-        let url = articleId == nil ? "/support" : "/support/article?slug=\(articleId!)"
+        //let url = articleId == nil ? "/support" : "/support/article?slug=\(articleId!)"
+        let url = articleId == nil ? "/" : "/\(articleId!)" //tmp fix
+        print("[ModalPresenter] request url: \(url)")
         supportCenter.navigate(to: url)
         topViewController?.present(supportCenter, animated: true, completion: {})
     }
@@ -559,8 +561,7 @@ class ModalPresenter : Subscriber, Trackable {
 
     private func presentBuyController(_ mountPoint: String) {
         guard let walletManager = self.walletManager else { return }
-        let vc: BRWebViewController
-        
+        let vc: BRWebViewController       
         #if Debug || Testflight
             vc = BRWebViewController(bundleName: "bread-frontend-staging", mountPoint: mountPoint, walletManager: walletManager, store: store)
         #else

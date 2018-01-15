@@ -1,4 +1,4 @@
-//
+﻿//
 //  BRWebViewController.swift
 //  BreadWallet
 //
@@ -133,7 +133,7 @@ import WebKit
     
     override open func viewWillAppear(_ animated: Bool) {
         edgesForExtendedLayout = .all
-        self.beginDidLoadCountdown()
+        //self.beginDidLoadCountdown()  //tmp unable
     }
     
     override open func viewDidAppear(_ animated: Bool) {
