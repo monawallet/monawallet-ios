@@ -1,4 +1,4 @@
-﻿//
+//
 //  BRAPIClient.swift
 //  BreadWallet
 //
@@ -73,9 +73,9 @@ open class BRAPIClient : NSObject, URLSessionDelegate, URLSessionTaskDelegate, B
     
     // host is the server(s) on which the API is hosted
     #if Testflight || Debug
-    var host = "ko8mb3jwqc.execute-api.ap-northeast-1.amazonaws.com/v1"    //TODO:add DNS
+    var host = "api.monawallet.jp"
     #else
-    var host = "ko8mb3jwqc.execute-api.ap-northeast-1.amazonaws.com/v1"    //TODO:add DNS
+    var host = "api.monawallet.jp"
     #endif
     
     // isFetchingAuth is set to true when a request is currently trying to renew authentication (the token)

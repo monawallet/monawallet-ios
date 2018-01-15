@@ -1,4 +1,4 @@
-﻿//
+//
 //  BRAPIClient+Wallet.swift
 //  breadwallet
 //
@@ -8,7 +8,8 @@
 
 import Foundation
 
-private let fallbackRatesURL = "https://ko8mb3jwqc.execute-api.ap-northeast-1.amazonaws.com/v1/rates"	//TODO:add DNS
+private let ratesURL = "https://sub-api.monainfo.com/v1/rates"
+private let fallbackRatesURL = "https://api.monainfo.com/v1/rates"
 
 extension BRAPIClient {
     func feePerKb(_ handler: @escaping (_ fees: Fees, _ error: String?) -> Void) {
@@ -41,7 +42,7 @@ extension BRAPIClient {
     }
     
     func exchangeRates(isFallback: Bool = false, _ handler: @escaping (_ rates: [Rate], _ error: String?) -> Void) {
-        let request = isFallback ? URLRequest(url: URL(string: fallbackRatesURL)!) : URLRequest(url: url("/rates"))
+        let request = isFallback ? URLRequest(url: URL(string: fallbackRatesURL)!) : URLRequest(url: URL(string: ratesURL)!)
         let task = dataTaskWithRequest(request) { (data, response, error) in
             if error == nil, let data = data,
                 let parsedData = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
