@@ -197,7 +197,7 @@ class ModalPresenter : Subscriber, Trackable {
         supportCenter.modalPresentationCapturesStatusBarAppearance = true
         supportCenter.transitioningDelegate = supportCenter
         //let url = articleId == nil ? "/support" : "/support/article?slug=\(articleId!)"
-        let url = articleId == nil ? "/" : "/\(articleId!)" //tmp fix
+        let url = articleId == nil ? "/" : "/article/\(articleId!)" //tmp fix
         print("[ModalPresenter] request url: \(url)")
         supportCenter.navigate(to: url)
         topViewController?.present(supportCenter, animated: true, completion: {})
