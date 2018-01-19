@@ -12,14 +12,14 @@ enum S {
 
     enum Symbols {
         static let bits = "m"
-        static let btc = "𐊰"
+        static let btc = "M"
         static let narrowSpace = "\u{2009}"
         static let lock = "\u{1F512}"
         static let redX = "\u{274C}"
         static func currencyButtonTitle(maxDigits: Int) -> String {
             switch maxDigits {
             case 2:
-                return "uMONA\(S.Symbols.narrowSpace)(m\(S.Symbols.bits))"
+                return "μMONA\(S.Symbols.narrowSpace)(m\(S.Symbols.bits))"
             case 5:
                 return "mMONA\(S.Symbols.narrowSpace)(\(S.Symbols.bits))"
             case 8:
@@ -283,7 +283,7 @@ enum S {
         static let twitter = NSLocalizedString("About.twitter", value:"Twitter", comment: "About screen twitter label")
         static let reddit = NSLocalizedString("About.reddit", value:"Reddit", comment: "About screen reddit label")
         static let privacy = NSLocalizedString("About.privacy", value:"Privacy Policy", comment: "Privay Policy button label")
-        static let footer = NSLocalizedString("About.footer", value:"Made by the global MonaWallet team. Version %1$@", comment: "About screen footer")
+        static let footer = NSLocalizedString("About.footer", value:"Made by the MonaWallet team. Version %1$@", comment: "About screen footer")
     }
 
     enum PushNotifications {
