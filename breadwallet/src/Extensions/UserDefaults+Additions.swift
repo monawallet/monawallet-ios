@@ -1,4 +1,4 @@
-﻿//
+//
 //  UserDefaults+Additions.swift
 //  breadwallet
 //
@@ -58,7 +58,7 @@ extension UserDefaults {
     }
 
     //
-    // 2 - uMONA
+    // 2 - μMONA
     // 5 - mMONA
     // 8 - MONA
     //
@@ -68,8 +68,8 @@ extension UserDefaults {
                 return 5
             }
             let maxDigits = defaults.integer(forKey: maxDigitsKey)
-            if maxDigits == 5 {
-                return 8 //Convert mMONA to MONA
+            if maxDigits == 2 {
+                return 8 //Convert μMONA to MONA
             } else {
                 return maxDigits
             }
