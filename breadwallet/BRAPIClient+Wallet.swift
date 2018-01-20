@@ -15,6 +15,7 @@ extension BRAPIClient {
     func feePerKb(_ handler: @escaping (_ fees: Fees, _ error: String?) -> Void) {
         let req = URLRequest(url: url("/fee-per-kb"))
         let task = self.dataTaskWithRequest(req) { (data, response, err) -> Void in
+            var priorityFeePerKb: uint_fast64_t = 0
             var regularFeePerKb: uint_fast64_t = 0
             var economyFeePerKb: uint_fast64_t = 0
             var errStr: String? = nil
@@ -22,21 +23,24 @@ extension BRAPIClient {
                 do {
                     let parsedObject: Any? = try JSONSerialization.jsonObject(
                         with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
-                    if let top = parsedObject as? NSDictionary, let regular = top["fee_per_kb"] as? NSNumber, let economy = top["fee_per_kb_economy"] as? NSNumber {
+                    if let top = parsedObject as? NSDictionary, let priority = top["fee_per_kb_priority"] as? NSNumber, let regular = top["fee_per_kb"] as? NSNumber,
+                        let economy = top["fee_per_kb_economy"] as? NSNumber {
+                        priorityFeePerKb = priority.uint64Value
                         regularFeePerKb = regular.uint64Value
                         economyFeePerKb = economy.uint64Value
+                        print(priorityFeePerKb)
                     }
                 } catch (let e) {
                     self.log("fee-per-kb: error parsing json \(e)")
                 }
-                if regularFeePerKb == 0 || economyFeePerKb == 0 {
+                if priorityFeePerKb == 0 || regularFeePerKb == 0 || economyFeePerKb == 0 {
                     errStr = "invalid json"
                 }
             } else {
                 self.log("fee-per-kb network error: \(String(describing: err))")
                 errStr = "bad network connection"
             }
-            handler(Fees(regular: regularFeePerKb, economy: economyFeePerKb), errStr)
+            handler(Fees(priority: priorityFeePerKb, regular: regularFeePerKb, economy: economyFeePerKb), errStr)
         }
         task.resume()
     }

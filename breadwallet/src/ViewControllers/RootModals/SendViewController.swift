@@ -1,4 +1,4 @@
-﻿//
+//
 //  SendViewController.swift
 //  breadwallet
 //
@@ -142,6 +142,9 @@ class SendViewController : UIViewController, Subscriber, ModalPresentable, Track
             myself.feeType = fee
             let fees = myself.store.state.fees
             switch fee {
+            case .priority:
+                wallet.feePerKb = fees.priority
+                print(fees.priority)
             case .regular:
                 wallet.feePerKb = fees.regular
             case .economy:

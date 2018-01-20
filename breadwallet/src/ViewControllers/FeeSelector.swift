@@ -1,4 +1,4 @@
-﻿//
+//
 //  FeeSelector.swift
 //  breadwallet
 //
@@ -9,6 +9,7 @@
 import UIKit
 
 enum Fee {
+    case priority
     case regular
     case economy
 }
@@ -37,7 +38,7 @@ class FeeSelector : UIView {
     private let header = UILabel(font: .customMedium(size: 16.0), color: .darkText)
     private let subheader = UILabel(font: .customBody(size: 14.0), color: .grayTextTint)
     private let warning = UILabel.wrapping(font: .customBody(size: 14.0), color: .red)
-    private let control = UISegmentedControl(items: [S.FeeSelector.regular, S.FeeSelector.economy])
+    private let control = UISegmentedControl(items: [S.FeeSelector.priority, S.FeeSelector.regular, S.FeeSelector.economy])
     private var bottomConstraint: NSLayoutConstraint?
 
     private func setupViews() {
@@ -67,6 +68,10 @@ class FeeSelector : UIView {
 
         control.valueChanged = strongify(self) { myself in
             if myself.control.selectedSegmentIndex == 0 {
+                myself.didUpdateFee?(.priority)
+                myself.subheader.text = S.FeeSelector.priorityLabel
+                myself.warning.text = S.FeeSelector.priorityWarning
+            } else if myself.control.selectedSegmentIndex == 1 {
                 myself.didUpdateFee?(.regular)
                 myself.subheader.text = S.FeeSelector.regularLabel
                 myself.warning.text = ""
@@ -77,7 +82,7 @@ class FeeSelector : UIView {
             }
         }
 
-        control.selectedSegmentIndex = 0
+        control.selectedSegmentIndex = 1
         clipsToBounds = true
 
     }

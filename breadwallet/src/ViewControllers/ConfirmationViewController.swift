@@ -1,4 +1,4 @@
-﻿//
+//
 //  ConfirmationViewController.swift
 //  breadwallet
 //
@@ -148,8 +148,10 @@ class ConfirmationViewController : UIViewController, ContentBoxPresenter {
         address.text = addressText
         address.lineBreakMode = .byTruncatingMiddle
         switch feeType {
+        case .priority:
+            processingTime.text = String(format: S.Confirmation.processingTime, "1.5-3")
         case .regular:
-            processingTime.text = String(format: S.Confirmation.processingTime, "2.5-5")
+            processingTime.text = String(format: S.Confirmation.processingTime, "3-5")
         case .economy:
             processingTime.text = String(format: S.Confirmation.processingTime, "5+")
         }

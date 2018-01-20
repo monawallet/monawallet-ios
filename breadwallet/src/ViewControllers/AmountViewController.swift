@@ -1,4 +1,4 @@
-﻿//
+//
 //  AmountViewController.swift
 //  breadwallet
 //
@@ -370,5 +370,5 @@ class AmountViewController : UIViewController, Trackable {
 extension Fees : Equatable {}
 
 func ==(lhs: Fees, rhs: Fees) -> Bool {
-    return lhs.regular == rhs.regular && lhs.economy == rhs.economy
+    return lhs.priority == rhs.priority && lhs.regular == rhs.regular && lhs.economy == rhs.economy
 }

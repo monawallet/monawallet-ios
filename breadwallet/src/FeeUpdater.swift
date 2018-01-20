@@ -1,4 +1,4 @@
-﻿//
+//
 //  FeeUpdater.swift
 //  breadwallet
 //
@@ -9,13 +9,14 @@
 import Foundation
 
 struct Fees {
+    let priority: UInt64
     let regular: UInt64
     let economy: UInt64
 }
 
 extension Fees {
     static var defaultFees: Fees {
-        return Fees(regular: defaultFeePerKB, economy: defaultFeePerKB)
+        return Fees(priority: defaultFeePerKB, regular: defaultFeePerKB, economy: defaultFeePerKB)
     }
 }
 
@@ -32,7 +33,7 @@ class FeeUpdater : Trackable {
     func refresh(completion: @escaping () -> Void) {
         walletManager.apiClient?.feePerKb { newFees, error in
             guard error == nil else { print("feePerKb error: \(String(describing: error))"); completion(); return }
-            guard newFees.regular < self.maxFeePerKB && newFees.economy > self.minFeePerKB else {
+            guard newFees.priority < self.maxFeePerKB && newFees.regular < self.maxFeePerKB && newFees.economy > self.minFeePerKB else {
                 self.saveEvent("wallet.didUseDefaultFeePerKB")
                 return
             }
