@@ -1,4 +1,4 @@
-﻿//
+//
 //  AboutViewController.swift
 //  breadwallet
 //
@@ -16,7 +16,7 @@ class AboutViewController : UIViewController {
     private let logoBackground = GradientView()
     private let blog = AboutCell(text: S.About.blog)
     private let twitter = AboutCell(text: S.About.twitter)
-    private let reddit = AboutCell(text: S.About.reddit)
+//    private let reddit = AboutCell(text: S.About.reddit)
     private let privacy = UIButton(type: .system)
     private let footer = UILabel(font: .customBody(size: 13.0), color: .secondaryGrayText)
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class AboutViewController : UIViewController {
         logoBackground.addSubview(logo)
         view.addSubview(blog)
         view.addSubview(twitter)
-        view.addSubview(reddit)
+//        view.addSubview(reddit)
         view.addSubview(privacy)
         view.addSubview(footer)
     }
@@ -44,8 +44,9 @@ class AboutViewController : UIViewController {
         logoBackground.constrain([
             logoBackground.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoBackground.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: C.padding[3]),
-            logoBackground.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.5),
-            logoBackground.heightAnchor.constraint(equalTo: logoBackground.widthAnchor, multiplier: 342.0/553.0) ])
+            logoBackground.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.70),
+            logoBackground.heightAnchor.constraint(equalTo: logoBackground.widthAnchor, multiplier: 242.0/553.0) ])
+
         logo.constrain(toSuperviewEdges: nil)
         blog.constrain([
             blog.topAnchor.constraint(equalTo: logoBackground.bottomAnchor, constant: C.padding[2]),
@@ -55,13 +56,14 @@ class AboutViewController : UIViewController {
             twitter.topAnchor.constraint(equalTo: blog.bottomAnchor, constant: C.padding[2]),
             twitter.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             twitter.trailingAnchor.constraint(equalTo: view.trailingAnchor) ])
-        reddit.constrain([
-            reddit.topAnchor.constraint(equalTo: twitter.bottomAnchor, constant: C.padding[2]),
-            reddit.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            reddit.trailingAnchor.constraint(equalTo: view.trailingAnchor) ])
+//        reddit.constrain([
+//            reddit.topAnchor.constraint(equalTo: twitter.bottomAnchor, constant: C.padding[2]),
+//            reddit.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            reddit.trailingAnchor.constraint(equalTo: view.trailingAnchor) ])
         privacy.constrain([
             privacy.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            privacy.topAnchor.constraint(equalTo: reddit.bottomAnchor, constant: C.padding[2])])
+//            privacy.topAnchor.constraint(equalTo: reddit.bottomAnchor, constant: C.padding[2])])
+            privacy.topAnchor.constraint(equalTo: twitter.bottomAnchor, constant: C.padding[2])])
         footer.constrain([
             footer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             footer.topAnchor.constraint(equalTo: privacy.bottomAnchor) ])
@@ -83,11 +85,11 @@ class AboutViewController : UIViewController {
             myself.presentURL(string: "https://breadapp.com/blog/")
         }
         twitter.button.tap = strongify(self) { myself in
-            myself.presentURL(string: "https://twitter.com/breadapp")
+            myself.presentURL(string: "https://twitter.com/monawallet")
         }
-        reddit.button.tap = strongify(self) { myself in
-            myself.presentURL(string: "https://reddit.com/r/breadwallet/")
-        }
+//        reddit.button.tap = strongify(self) { myself in
+//            myself.presentURL(string: "https://reddit.com/r/breadwallet/")
+//        }
         privacy.tap = strongify(self) { myself in
             myself.presentURL(string: "https://breadapp.com/privacy-policy")
         }
