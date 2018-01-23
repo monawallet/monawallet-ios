@@ -28,7 +28,6 @@ extension BRAPIClient {
                         priorityFeePerKb = priority.uint64Value
                         regularFeePerKb = regular.uint64Value
                         economyFeePerKb = economy.uint64Value
-                        print(priorityFeePerKb)
                     }
                 } catch (let e) {
                     self.log("fee-per-kb: error parsing json \(e)")
