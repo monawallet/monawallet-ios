@@ -1,4 +1,4 @@
-﻿//
+//
 //  BRReplicatedKVStore.swift
 //  BreadWallet
 //
@@ -494,7 +494,7 @@ open class BRReplicatedKVStore: NSObject {
             
             self.log("Syncing \(allKeyData.count) keys")
             var failures = 0
-            let q = DispatchQueue(label: "com.hachiro.monawallet.kvSyncQueue", attributes: DispatchQueue.Attributes.concurrent)
+            let q = DispatchQueue(label: "jp.pronama.monawallet.kvSyncQueue", attributes: DispatchQueue.Attributes.concurrent)
             let grp = DispatchGroup()
             let seph = DispatchSemaphore(value: 10)
             
