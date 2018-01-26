@@ -1,4 +1,4 @@
-﻿//
+//
 //  Constants.swift
 //  breadwallet
 //
@@ -33,7 +33,7 @@ struct C {
     static let secondsInDay: TimeInterval = 86400
     static let maxMoney: UInt64 = 105120000*100000000
     static let satoshis: UInt64 = 100000000
-    static let walletQueue = "com.hachiro.walletqueue"
+    static let walletQueue = "jp.pronama.walletqueue"
     static let btcCurrencyCode = "MONA"
     static let null = "(null)"
     static let maxMemoLength = 250
