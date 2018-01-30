@@ -1,4 +1,4 @@
-﻿//
+//
 //  BRWebViewController.swift
 //  BreadWallet
 //
@@ -66,7 +66,18 @@ import WebKit
     }
     
     var indexUrl: URL {
-        return URL(string: "http://127.0.0.1:\(server.port)\(mountPoint)")!
+        switch mountPoint {
+        // MARK (losh11): - cleanup switch below    //TODO add DNS
+            case "/buy":
+                let addr = "https://monawallet-fronted.netlify.com=" + (walletManager.wallet?.receiveAddress)!
+                return URL(string: addr)!
+            case "/support":
+                return URL(string: "https://monawallet-fronted.netlify.com/support")!
+            case "/ea":
+                return URL(string: "https://monawallet-fronted.netlify.com/ea")!
+            default:
+                return URL(string: "http://127.0.0.1:\(server.port)\(mountPoint)")!
+        }
     }
     
     private let messageUIPresenter = MessageUIPresenter()
@@ -133,7 +144,7 @@ import WebKit
     
     override open func viewWillAppear(_ animated: Bool) {
         edgesForExtendedLayout = .all
-        //self.beginDidLoadCountdown()  //tmp unable
+//        self.beginDidLoadCountdown()
     }
     
     override open func viewDidAppear(_ animated: Bool) {
@@ -351,13 +362,25 @@ import WebKit
     
     open func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction,
                         decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if let url = navigationAction.request.url, let host = url.host, let port = (url as NSURL).port {
-            if host == server.listenAddress || port.int32Value == Int32(server.port) {
-                return decisionHandler(.allow)
+        //if let url = navigationAction.request.url, let host = url.host, let port = (url as NSURL).port {
+        //    if host == server.listenAddress || port.int32Value == Int32(server.port) {
+        //        return decisionHandler(.allow)
+        //    }
+        //}
+        //print("[BRWebViewController disallowing navigation: \(navigationAction)")
+        //decisionHandler(.cancel)
+        
+        //MARK (losh11): - improve code which closes webView    //TODO add DNS
+        if let url = navigationAction.request.url?.absoluteString{
+            let mutableurl = url
+            if mutableurl == "https://monawallet-fronted.netlify.com/close" {
+                DispatchQueue.main.async {
+                    self.closeNow()
+                }
             }
         }
-        print("[BRWebViewController disallowing navigation: \(navigationAction)")
-        decisionHandler(.cancel)
+        
+        return decisionHandler(.allow)
     }
     
     // MARK: - socket delegate
