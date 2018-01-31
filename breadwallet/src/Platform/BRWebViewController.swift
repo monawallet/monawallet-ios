@@ -372,14 +372,21 @@ import WebKit
         
         //MARK (losh11): - improve code which closes webView    //TODO add DNS
         if let url = navigationAction.request.url?.absoluteString{
-            let mutableurl = url
-            if mutableurl == "https://monawallet-fronted.netlify.com/close" {
+            
+            let fallingurl = url
+            
+            //close webview
+            if fallingurl == "https://monawallet-fronted.netlify.com/close" {
                 DispatchQueue.main.async {
                     self.closeNow()
                 }
             }
+            
+            //open support in safari
+            if (fallingurl.starts(with: "https://monawallet.net") || fallingurl == "https://mobile.twitter.com/Mona_Wallet" || fallingurl == "mailto:support@monawallet.net" ) {
+                UIApplication.shared.openURL(URL(string: fallingurl)!)
+            }
         }
-        
         return decisionHandler(.allow)
     }
     
