@@ -69,12 +69,12 @@ import WebKit
         switch mountPoint {
         // MARK (losh11): - cleanup switch below    //TODO add DNS
             case "/buy":
-                let addr = "https://monawallet-fronted.netlify.com=" + (walletManager.wallet?.receiveAddress)!
+                let addr = "https://fronted.monawallet.net=" + (walletManager.wallet?.receiveAddress)!
                 return URL(string: addr)!
             case "/support":
-                return URL(string: "https://monawallet-fronted.netlify.com/support")!
+                return URL(string: "https://fronted.monawallet.net/support")!
             case "/ea":
-                return URL(string: "https://monawallet-fronted.netlify.com/ea")!
+                return URL(string: "https://fronted.monawallet.net/ea")!
             default:
                 return URL(string: "http://127.0.0.1:\(server.port)\(mountPoint)")!
         }
@@ -376,14 +376,14 @@ import WebKit
             let fallingurl = url
             
             //close webview
-            if fallingurl == "https://monawallet-fronted.netlify.com/close" {
+            if fallingurl == "https://fronted.monawallet.net/close" {
                 DispatchQueue.main.async {
                     self.closeNow()
                 }
             }
             
             //open support in safari
-            if (fallingurl.starts(with: "https://monawallet.net") || fallingurl == "https://mobile.twitter.com/Mona_Wallet" || fallingurl == "mailto:support@monawallet.net" ) {
+            if (fallingurl.starts(with: "https://monawallet.net") || fallingurl == "https://mobile.twitter.com/mona_wallet" || fallingurl == "mailto:support@monawallet.net" ) {
                 UIApplication.shared.openURL(URL(string: fallingurl)!)
             }
         }
