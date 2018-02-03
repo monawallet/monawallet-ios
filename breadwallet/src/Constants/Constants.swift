@@ -37,8 +37,8 @@ struct C {
     static let btcCurrencyCode = "MONA"
     static let null = "(null)"
     static let maxMemoLength = 250
-    static let feedbackEmail = "feedback@breadwallet.com"
-    static let reviewLink = "https://itunes.apple.com/app/breadwallet-bitcoin-wallet/id885251393?action=write-review"
+    static let feedbackEmail = "feedback@monawallet.net"
+    static let reviewLink = "https://itunes.apple.com/app/monawallet/id1343235820?action=write-review"
     static var standardPort: Int {
         return E.isTestnet ? 19403 : 9401
     }
