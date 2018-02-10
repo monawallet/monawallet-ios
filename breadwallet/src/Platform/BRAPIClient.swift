@@ -329,7 +329,7 @@ open class BRAPIClient : NSObject, URLSessionDelegate, URLSessionTaskDelegate, B
                 // follow the redirect if we're interacting with our API
                 actualRequest = decorateRequest(request)
                 log("redirecting \(String(describing: currentReq.url)) to \(String(describing: request.url))")
-                if let curAuth = currentReq.allHTTPHeaderFields?["Authorization"], curAuth.hasPrefix("MonaWallets") {
+                if let curAuth = currentReq.allHTTPHeaderFields?["Authorization"], curAuth.hasPrefix("MonaWallet") {
                     // add authentication because the previous request was authenticated
                     log("adding authentication to redirected request")
                     actualRequest = signRequest(actualRequest)
