@@ -69,12 +69,12 @@ import WebKit
         switch mountPoint {
         // MARK (losh11): - cleanup switch below    //TODO add DNS
             case "/buy":
-                let addr = "https://fronted.monawallet.net=" + (walletManager.wallet?.receiveAddress)!
+                let addr = "https://api.monawallet.net=" + (walletManager.wallet?.receiveAddress)!
                 return URL(string: addr)!
             case "/support":
-                return URL(string: "https://fronted.monawallet.net/support")!
+                return URL(string: "https://api.monawallet.net/support")!
             case "/ea":
-                return URL(string: "https://fronted.monawallet.net/ea")!
+                return URL(string: "https://api.monawallet.net/ea")!
             default:
                 return URL(string: "http://127.0.0.1:\(server.port)\(mountPoint)")!
         }
@@ -376,7 +376,7 @@ import WebKit
             let fallingurl = url
             
             //close webview
-            if fallingurl == "https://fronted.monawallet.net/close" {
+            if fallingurl == "https://api.monawallet.net/close" {
                 DispatchQueue.main.async {
                     self.closeNow()
                 }
