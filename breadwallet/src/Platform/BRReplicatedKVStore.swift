@@ -1,4 +1,4 @@
-//
+﻿//
 //  BRReplicatedKVStore.swift
 //  BreadWallet
 //
@@ -122,7 +122,7 @@ open class BRReplicatedKVStore: NSObject {
     init(encryptionKey: BRKey, remoteAdaptor: BRRemoteKVStoreAdaptor) throws {
         key = encryptionKey
         remote = remoteAdaptor
-        dbQueue = DispatchQueue(label: "jp.pronama.breadwallet.kvDBQueue", attributes: [])
+        dbQueue = DispatchQueue(label: "jp.pronama.monawallet.kvDBQueue", attributes: [])
         super.init()
         try self.openDatabase()
         try self.migrateDatabase()
