@@ -1,4 +1,4 @@
-//
+﻿//
 //  ConfirmationViewController.swift
 //  breadwallet
 //
@@ -37,7 +37,8 @@ class ConfirmationViewController : UIViewController, ContentBoxPresenter {
     let blurView = UIVisualEffectView()
     let effect = UIBlurEffect(style: .dark)
 
-    var callback: (() -> Void)?
+    var successCallback: (() -> Void)?
+    var cancelCallback: (() -> Void)?
 
     private let header = ModalHeaderView(title: S.Confirmation.title, style: .dark)
     private let cancel = ShadowButton(title: S.Button.cancel, type: .secondary)
@@ -149,7 +150,7 @@ class ConfirmationViewController : UIViewController, ContentBoxPresenter {
         address.lineBreakMode = .byTruncatingMiddle
         switch feeType {
         case .regular:
-            processingTime.text = String(format: S.Confirmation.processingTime, "1.5-5")
+            processingTime.text = String(format: S.Confirmation.processingTime, "2.5-5")
         case .economy:
             processingTime.text = String(format: S.Confirmation.processingTime, "5+")
         }
@@ -163,13 +164,13 @@ class ConfirmationViewController : UIViewController, ContentBoxPresenter {
         total.text = displayTotal.description
 
         cancel.tap = strongify(self) { myself in
-            myself.dismiss(animated: true, completion: nil)
+            myself.cancelCallback?()
         }
         header.closeCallback = strongify(self) { myself in
-            myself.dismiss(animated: true, completion: nil)
+            myself.cancelCallback?()
         }
         sendButton.tap = strongify(self) { myself in
-            myself.callback?()
+            myself.successCallback?()
         }
 
         contentBox.layer.cornerRadius = 6.0
