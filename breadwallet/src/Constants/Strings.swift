@@ -279,7 +279,7 @@ enum S {
 
     enum About {
         static let title = NSLocalizedString("About.title", value:"About", comment: "About screen title")
-        static let blog = NSLocalizedString("About.blog", value:"Blog", comment: "About screen blog label")
+        static let blog = NSLocalizedString("About.blog", value:"Website", comment: "About screen website label")
         static let twitter = NSLocalizedString("About.twitter", value:"Twitter", comment: "About screen twitter label")
         static let reddit = NSLocalizedString("About.reddit", value:"Reddit", comment: "About screen reddit label")
         static let privacy = NSLocalizedString("About.privacy", value:"Privacy Policy", comment: "Privay Policy button label")
@@ -532,12 +532,9 @@ enum S {
 
     enum FeeSelector {
         static let title = NSLocalizedString("FeeSelector.title", value: "Processing Speed", comment: "Fee Selector title")
-        static let priorityLabel = NSLocalizedString("FeeSelector.priorityLabel", value: "Estimated Delivery: 1.5-3 minutes", comment: "Fee Selector priority fee description")
-        static let regularLabel = NSLocalizedString("FeeSelector.regularLabel", value: "Estimated Delivery: 3-5 minutes", comment: "Fee Selector regular fee description")
+        static let regularLabel = NSLocalizedString("FeeSelector.regularLabel", value: "Estimated Delivery: 1.5-5 minutes", comment: "Fee Selector regular fee description")
         static let economyLabel = NSLocalizedString("FeeSelector.economyLabel", value: "Estimated Delivery: 5+ minutes", comment: "Fee Selector economly fee description")
-        static let priorityWarning = NSLocalizedString("FeeSelector.priorityWarning", value: "This option is for time-sensitive transactions.but hightly transactions fee.", comment: "Warning message for priority fee")
         static let economyWarning = NSLocalizedString("FeeSelector.economyWarning", value: "This option is not recommended for time-sensitive transactions.", comment: "Warning message for economy fee")
-        static let priority = NSLocalizedString("FeeSelector.priority", value: "Priority", comment: "Priority fee")
         static let regular = NSLocalizedString("FeeSelector.regular", value: "Regular", comment: "Regular fee")
         static let economy = NSLocalizedString("FeeSelector.economy", value: "Economy", comment: "Economy fee")
     }

@@ -1,4 +1,4 @@
-//
+﻿//
 //  DispatchQueue+Additions.swift
 //  breadwallet
 //
@@ -12,4 +12,9 @@ extension DispatchQueue {
     static var walletQueue: DispatchQueue = {
         return DispatchQueue(label: C.walletQueue)
     }()
+    
+    static let walletConcurrentQueue: DispatchQueue = {
+        return DispatchQueue(label: C.walletQueue, attributes: .concurrent)
+    }()
+    
 }
