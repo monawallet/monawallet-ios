@@ -279,7 +279,7 @@ enum S {
 
     enum About {
         static let title = NSLocalizedString("About.title", value:"About", comment: "About screen title")
-        static let blog = NSLocalizedString("About.blog", value:"Blog", comment: "About screen blog label")
+        static let blog = NSLocalizedString("About.blog", value:"Website", comment: "About screen website label")
         static let twitter = NSLocalizedString("About.twitter", value:"Twitter", comment: "About screen twitter label")
         static let reddit = NSLocalizedString("About.reddit", value:"Reddit", comment: "About screen reddit label")
         static let privacy = NSLocalizedString("About.privacy", value:"Privacy Policy", comment: "Privay Policy button label")
