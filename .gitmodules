@@ -6,4 +6,4 @@
 	url = https://github.com/breadwallet/nettle.git
 [submodule "Modules/monawallet-core"]
 	path = Modules/monawallet-core
-	url = https://github.com/8chan/monawallet-core.git
+	url = https://github.com/monawallet/monawallet-core.git 
