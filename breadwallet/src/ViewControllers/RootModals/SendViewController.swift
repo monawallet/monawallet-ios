@@ -1,4 +1,4 @@
-//
+﻿//
 //  SendViewController.swift
 //  breadwallet
 //
@@ -142,8 +142,6 @@ class SendViewController : UIViewController, Subscriber, ModalPresentable, Track
             myself.feeType = fee
             let fees = myself.store.state.fees
             switch fee {
-            case .priority:
-                wallet.feePerKb = fees.priority
             case .regular:
                 wallet.feePerKb = fees.regular
             case .economy:
@@ -243,9 +241,14 @@ class SendViewController : UIViewController, Subscriber, ModalPresentable, Track
 
         guard let amount = amount else { return }
         let confirm = ConfirmationViewController(amount: amount, fee: Satoshis(sender.fee), feeType: feeType ?? .regular, state: store.state, selectedRate: amountView.selectedRate, minimumFractionDigits: amountView.minimumFractionDigits, address: addressCell.address ?? "", isUsingBiometrics: sender.canUseBiometrics)
-        confirm.callback = {
+        confirm.successCallback = {
             confirm.dismiss(animated: true, completion: {
                 self.send()
+            })
+        }
+        confirm.cancelCallback = {
+            confirm.dismiss(animated: true, completion: {
+                self.sender.transaction = nil
             })
         }
         confirmTransitioningDelegate.shouldShowMaskView = false
