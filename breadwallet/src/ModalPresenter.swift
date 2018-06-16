@@ -533,7 +533,7 @@ class ModalPresenter : Subscriber, Trackable {
                             paperPhraseNavigationController.pushViewController(confirm, animated: true)
                         }
                     })
-                    write?.addCloseNavigationItem(tintColor: .white)
+                    write?.hideCloseNavigationItem()
                     write?.navigationItem.title = S.SecurityCenter.Cells.paperKeyTitle
 
                     vc.dismiss(animated: true, completion: {
@@ -550,26 +550,32 @@ class ModalPresenter : Subscriber, Trackable {
             verify.modalPresentationCapturesStatusBarAppearance = true
             paperPhraseNavigationController.present(verify, animated: true, completion: nil)
         })
-        start.addCloseNavigationItem(tintColor: .white)
         start.navigationItem.title = S.SecurityCenter.Cells.paperKeyTitle
         let faqButton = UIButton.buildFaqButton(store: store, articleId: ArticleIds.paperKey)
         faqButton.tintColor = .white
         start.navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
+        
+        if UserDefaults.writePaperPhraseDate != nil {
+            start.addCloseNavigationItem(tintColor: .white)
+        } else {
+            start.hideCloseNavigationItem()
+        }
+        
         paperPhraseNavigationController.viewControllers = [start]
         vc.present(paperPhraseNavigationController, animated: true, completion: nil)
     }
 
     private func presentBuyController(_ mountPoint: String) {
         guard let walletManager = self.walletManager else { return }
-        let vc: BRWebViewController       
+        let vc: BRWebViewController
+        
         #if Debug || Testflight
             vc = BRWebViewController(bundleName: "bread-frontend-staging", mountPoint: mountPoint, walletManager: walletManager, store: store)
         #else
             vc = BRWebViewController(bundleName: "bread-frontend", mountPoint: mountPoint, walletManager: walletManager, store: store)
         #endif
-        vc.startServer()
-        vc.preload()
-        self.topViewController?.present(vc, animated: true, completion: nil)
+
+        topViewController?.present(vc, animated: true, completion: nil)
     }
 
     private func presentRescan() {
