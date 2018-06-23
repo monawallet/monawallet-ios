@@ -1,4 +1,4 @@
-﻿//
+//
 //  AccountViewController.swift
 //  breadwallet
 //
@@ -91,7 +91,7 @@ class AccountViewController : UIViewController, Subscriber {
         // detect jailbreak so we can throw up an idiot warning, in viewDidLoad so it can't easily be swizzled out
         if !E.isSimulator {
             var s = stat()
-            var isJailbroken = (stat("/bin/sh", &s) == 0) ? true : false
+            var isJailbroken = (stat("/bin/bash", &s) == 0) ? true : false
             for i in 0..<_dyld_image_count() {
                 guard !isJailbroken else { break }
                 // some anti-jailbreak detection tools re-sandbox apps, so do a secondary check for any MobileSubstrate dyld images
