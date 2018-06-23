@@ -281,7 +281,7 @@ enum S {
         static let title = NSLocalizedString("About.title", value:"About", comment: "About screen title")
         static let blog = NSLocalizedString("About.blog", value:"Website", comment: "About screen website label")
         static let twitter = NSLocalizedString("About.twitter", value:"Twitter", comment: "About screen twitter label")
-        static let reddit = NSLocalizedString("About.reddit", value:"Reddit", comment: "About screen reddit label")
+        static let discord = NSLocalizedString("About.discord", value:"Discord", comment: "About screen discord label")
         static let privacy = NSLocalizedString("About.privacy", value:"Privacy Policy", comment: "Privay Policy button label")
         static let footer = NSLocalizedString("About.footer", value:"Made by the MonaWallet team. Version %1$@", comment: "About screen footer")
     }
@@ -335,6 +335,10 @@ enum S {
         static let buttonTitle = NSLocalizedString("StartPaperPhrase.buttonTitle", value:"Write Down Paper Key", comment: "button label")
         static let againButtonTitle = NSLocalizedString("StartPaperPhrase.againButtonTitle", value:"Write Down Paper Key Again", comment: "button label")
         static let date = NSLocalizedString("StartPaperPhrase.date", value:"You last wrote down your paper key on %1$@", comment: "Argument is date")
+        //TODO Fix
+        static let customizeText = NSLocalizedString("StartPaperPhrase.customizeText", value: "Please confirm %1$@ when using this application.", comment: "Please confirm [StartPaperPhrase.linkText gets added here as a button] when using this application.")
+        static let linkText = NSLocalizedString("StartPaperPhrase.linkText", value: "Terms of Use", comment: "Link Text (see StartPaperPhrase.customizeText)")
+        
     }
 
     enum WritePaperPhrase {
