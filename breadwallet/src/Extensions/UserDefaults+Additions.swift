@@ -65,14 +65,9 @@ extension UserDefaults {
     static var maxDigits: Int {
         get {
             guard defaults.object(forKey: maxDigitsKey) != nil else {
-                return 5
+                return 8///Default to MONA
             }
-            let maxDigits = defaults.integer(forKey: maxDigitsKey)
-            if maxDigits == 2 {
-                return 8 //Convert μMONA to MONA
-            } else {
-                return maxDigits
-            }
+            return defaults.integer(forKey: maxDigitsKey)
         }
         set { defaults.set(newValue, forKey: maxDigitsKey) }
     }
@@ -154,11 +149,11 @@ extension UserDefaults {
     static var walletRequiresBackup: Bool {
         if UserDefaults.writePaperPhraseDate != nil {
             return false
-        }
-        if let legacyWalletNeedsBackup = UserDefaults.legacyWalletNeedsBackup, legacyWalletNeedsBackup == true {
+        } else {
             return true
         }
-        if UserDefaults.writePaperPhraseDate == nil {
+        
+        if let legacyWalletNeedsBackup = UserDefaults.legacyWalletNeedsBackup, legacyWalletNeedsBackup == true {
             return true
         }
         return false

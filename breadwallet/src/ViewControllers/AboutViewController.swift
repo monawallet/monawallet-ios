@@ -16,7 +16,7 @@ class AboutViewController : UIViewController {
     private let logoBackground = GradientView()
     private let blog = AboutCell(text: S.About.blog)
     private let twitter = AboutCell(text: S.About.twitter)
-//    private let reddit = AboutCell(text: S.About.reddit)
+    private let discord = AboutCell(text: S.About.discord)
     private let privacy = UIButton(type: .system)
     private let footer = UILabel(font: .customBody(size: 13.0), color: .secondaryGrayText)
     override func viewDidLoad() {
@@ -32,7 +32,7 @@ class AboutViewController : UIViewController {
         logoBackground.addSubview(logo)
         view.addSubview(blog)
         view.addSubview(twitter)
-//        view.addSubview(reddit)
+        view.addSubview(discord)
         view.addSubview(privacy)
         view.addSubview(footer)
     }
@@ -56,14 +56,13 @@ class AboutViewController : UIViewController {
             twitter.topAnchor.constraint(equalTo: blog.bottomAnchor, constant: C.padding[2]),
             twitter.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             twitter.trailingAnchor.constraint(equalTo: view.trailingAnchor) ])
-//        reddit.constrain([
-//            reddit.topAnchor.constraint(equalTo: twitter.bottomAnchor, constant: C.padding[2]),
-//            reddit.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            reddit.trailingAnchor.constraint(equalTo: view.trailingAnchor) ])
+        discord.constrain([
+            discord.topAnchor.constraint(equalTo: twitter.bottomAnchor, constant: C.padding[2]),
+            discord.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            discord.trailingAnchor.constraint(equalTo: view.trailingAnchor) ])
         privacy.constrain([
             privacy.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            privacy.topAnchor.constraint(equalTo: reddit.bottomAnchor, constant: C.padding[2])])
-            privacy.topAnchor.constraint(equalTo: twitter.bottomAnchor, constant: C.padding[2])])
+            privacy.topAnchor.constraint(equalTo: discord.bottomAnchor, constant: C.padding[2])])
         footer.constrain([
             footer.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             footer.topAnchor.constraint(equalTo: privacy.bottomAnchor) ])
@@ -72,6 +71,8 @@ class AboutViewController : UIViewController {
     private func setData() {
         view.backgroundColor = .whiteTint
         titleLabel.text = S.About.title
+        privacy.setTitle(S.About.privacy, for: .normal)
+        privacy.titleLabel?.font = UIFont.customBody(size: 13.0)
         privacy.setTitle(S.About.privacy, for: .normal)
         privacy.titleLabel?.font = UIFont.customBody(size: 13.0)
         footer.textAlignment = .center
@@ -87,9 +88,9 @@ class AboutViewController : UIViewController {
         twitter.button.tap = strongify(self) { myself in
             myself.presentURL(string: "https://mobile.twitter.com/mona_wallet/")
         }
-//        reddit.button.tap = strongify(self) { myself in
-//            myself.presentURL(string: "https://reddit.com/r/breadwallet/")
-//        }
+        discord.button.tap = strongify(self) { myself in
+            myself.presentURL(string: "https://discordapp.com/invite/tQ2NpJ5")
+        }
         privacy.tap = strongify(self) { myself in
             myself.presentURL(string: "https://monawallet.net/privacy/")
         }

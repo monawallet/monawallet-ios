@@ -1,4 +1,4 @@
-﻿//
+//
 //  AccountViewController.swift
 //  breadwallet
 //
@@ -57,7 +57,7 @@ class AccountViewController : UIViewController, Subscriber {
     //MARK: - Private
     private let store: Store
     private let headerView: AccountHeaderView
-    private let footerView = AccountFooterView()
+    private var footerView = AccountFooterView()
     private let transactionsLoadingView = LoadingProgressView()
     private let transactionsTableView: TransactionsTableViewController
     private let footerHeight: CGFloat = 56.0
@@ -91,7 +91,7 @@ class AccountViewController : UIViewController, Subscriber {
         // detect jailbreak so we can throw up an idiot warning, in viewDidLoad so it can't easily be swizzled out
         if !E.isSimulator {
             var s = stat()
-            var isJailbroken = (stat("/bin/sh", &s) == 0) ? true : false
+            var isJailbroken = (stat("/bin/bash", &s) == 0) ? true : false
             for i in 0..<_dyld_image_count() {
                 guard !isJailbroken else { break }
                 // some anti-jailbreak detection tools re-sandbox apps, so do a secondary check for any MobileSubstrate dyld images
@@ -105,6 +105,12 @@ class AccountViewController : UIViewController, Subscriber {
             showJailbreakWarnings(isJailbroken: isJailbroken)
         }
 
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { _ in
+            if UserDefaults.writePaperPhraseDate != nil {
+                self.footerView.refreshButtonStatus()
+            }
+        }
+        
         addTransactionsView()
         addSubviews()
         addConstraints()
@@ -199,7 +205,6 @@ class AccountViewController : UIViewController, Subscriber {
                                 myself.setNeedsStatusBarAppearanceUpdate()
             })
         }
-
 
         searchHeaderview.didChangeFilters = { [weak self] filters in
             self?.transactionsTableView.filters = filters
