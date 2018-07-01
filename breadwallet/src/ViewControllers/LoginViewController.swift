@@ -1,4 +1,4 @@
-﻿//
+//
 //  LoginViewController.swift
 //  breadwallet
 //
@@ -90,6 +90,7 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
     private var hasAttemptedToShowBiometrics = false
     private let lockedOverlay = UIVisualEffectView()
     private var isResetting = false
+    private let version = UILabel(font: .customMedium(size: 12), color: .whiteTint)
 
     override func viewDidLoad() {
         addSubviews()
@@ -170,24 +171,12 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
         topControlContainer.addSubview(addressButton)
         topControlContainer.addSubview(scanButton)
         view.addSubview(logo)
+        view.addSubview(version)
         if walletManager != nil {
             view.addSubview(pinPadBackground)
         } else {
             view.addSubview(activityView)
         }
-    }
-
-    private func padding() -> Int {
-        var imagePadding = 0
-        if(UIScreen.main.bounds.size.height <= 568) // iPhone SE & 4
-        {
-            imagePadding = 9
-        }
-        else
-        {
-            imagePadding = 13
-        }
-        return imagePadding
     }
 
     private func addConstraints() {
@@ -210,7 +199,7 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
             topControlContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: C.padding[2]),
             topControlContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -C.padding[2]),
             topControlContainer.heightAnchor.constraint(equalToConstant: topControlHeight) ])
-        addressButton.constrain([   
+        addressButton.constrain([
             addressButton.leadingAnchor.constraint(equalTo: topControlContainer.leadingAnchor),
             addressButton.topAnchor.constraint(equalTo: topControlContainer.topAnchor),
             addressButton.trailingAnchor.constraint(equalTo: topControlContainer.centerXAnchor),
@@ -222,10 +211,14 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
             scanButton.bottomAnchor.constraint(equalTo: topControlContainer.bottomAnchor) ])
 
         logo.constrain([
-            logo.topAnchor.constraint(equalTo: topControlContainer.bottomAnchor, constant: C.padding[padding()]),
+            logo.topAnchor.constraint(equalTo: topControlContainer.bottomAnchor, constant: C.padding[8]),
             logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logo.heightAnchor.constraint(equalTo: logo.widthAnchor, multiplier: C.Sizes.logoAspectRatio),
             logo.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.35) ])
+        version.constrain([
+            version.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            version.topAnchor.constraint(equalTo:logo.bottomAnchor, constant: C.padding[2]),
+            version.heightAnchor.constraint(equalToConstant: 14)])
         if walletManager != nil {
             pinPadBackground.constrain([
                 pinPadBackground.leadingAnchor.constraint(equalTo: pinPad.view.leadingAnchor),
@@ -239,6 +232,8 @@ class LoginViewController : UIViewController, Subscriber, Trackable {
             activityView.startAnimating()
         }
         subheader.text = S.UnlockScreen.subheader
+        version.text = AppVersion.string
+        version.textAlignment = .center
 
         addressButton.addTarget(self, action: #selector(addressTapped), for: .touchUpInside)
         scanButton.addTarget(self, action: #selector(scanTapped), for: .touchUpInside)
