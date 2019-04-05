@@ -425,6 +425,7 @@
 		CEF61B141ED0D10000C7EA6A /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF61B131ED0D10000C7EA6A /* Types.swift */; };
 		CEF61B161ED2056D00C7EA6A /* NumberFormatter+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF61B151ED2056D00C7EA6A /* NumberFormatter+Additions.swift */; };
 		CEFFA2D11EB3BD730085C5D1 /* LoadingIndicator.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFFA2D01EB3BD730085C5D1 /* LoadingIndicator.xcassets */; };
+		F5C851502257462B00BC9955 /* BRBech32.c in Sources */ = {isa = PBXBuildFile; fileRef = F5C8514F2257462B00BC9955 /* BRBech32.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1567,6 +1568,9 @@
 		CEF61B131ED0D10000C7EA6A /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Types.swift; path = src/Models/Types.swift; sourceTree = "<group>"; };
 		CEF61B151ED2056D00C7EA6A /* NumberFormatter+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NumberFormatter+Additions.swift"; path = "src/Extensions/NumberFormatter+Additions.swift"; sourceTree = "<group>"; };
 		CEFFA2D01EB3BD730085C5D1 /* LoadingIndicator.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LoadingIndicator.xcassets; sourceTree = "<group>"; };
+		F5C8514D2257462A00BC9955 /* BRChainParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRChainParams.h; sourceTree = "<group>"; };
+		F5C8514E2257462A00BC9955 /* BRBech32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBech32.h; sourceTree = "<group>"; };
+		F5C8514F2257462B00BC9955 /* BRBech32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRBech32.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2741,6 +2745,8 @@
 				75DC77B01DAA05B500932D9A /* BRArray.h */,
 				75DC77B11DAA05B500932D9A /* BRBase58.c */,
 				75DC77B21DAA05B500932D9A /* BRBase58.h */,
+				F5C8514F2257462B00BC9955 /* BRBech32.c */,
+				F5C8514E2257462A00BC9955 /* BRBech32.h */,
 				75DC77B31DAA05B500932D9A /* BRBIP32Sequence.c */,
 				75DC77B41DAA05B500932D9A /* BRBIP32Sequence.h */,
 				75DC77B51DAA05B500932D9A /* BRBIP38Key.c */,
@@ -2752,6 +2758,7 @@
 				75DC77BB1DAA05B500932D9A /* BRBloomFilter.h */,
 				75DC77BC1DAA05B500932D9A /* BRCrypto.c */,
 				75DC77BD1DAA05B500932D9A /* BRCrypto.h */,
+				F5C8514D2257462A00BC9955 /* BRChainParams.h */,
 				75DC77BE1DAA05B500932D9A /* BRInt.h */,
 				75DC77BF1DAA05B500932D9A /* BRKey.c */,
 				75DC77C01DAA05B500932D9A /* BRKey.h */,
@@ -3841,6 +3848,7 @@
 				CEE0EF521EBD14B60018DB36 /* PinTransitioningDelegate.swift in Sources */,
 				CE45C1FD1E7650F5002C3847 /* KVStoreCoordinator.swift in Sources */,
 				754AE0BC1DFE8A46007FD001 /* BRCore.swift in Sources */,
+				F5C851502257462B00BC9955 /* BRBech32.c in Sources */,
 				22A9A94A1DF61945000F0016 /* BRCameraPlugin.swift in Sources */,
 				CEC6AA3B1DEE4EB000EE5AFD /* CGRect+Additions.swift in Sources */,
 				CE45C1FB1E74F89C002C3847 /* WalletInfo.swift in Sources */,
