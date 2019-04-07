@@ -1,4 +1,4 @@
-﻿//
+//
 //  WalletManager.swift
 //  breadwallet
 //
@@ -96,12 +96,6 @@ class WalletManager : BRWalletListener, BRPeerManagerListener {
     internal lazy var lazyWallet: BRWallet? = {
         return BRWallet(transactions: self.loadTransactions(), masterPubKey: self.masterPubKey,
                         listener: self)
-    }()
-
-    internal lazy var bCashWallet: BRWallet? = {
-        guard let wallet = self.wallet else { return nil }
-        let txns = wallet.transactions.compactMap { return $0 } .filter { $0.pointee.blockHeight < bCashForkBlockHeight }
-        return BRWallet(transactions: txns, masterPubKey: self.masterPubKey, listener: BadListener())
     }()
 
     private lazy var lazyAPIClient: BRAPIClient? = {

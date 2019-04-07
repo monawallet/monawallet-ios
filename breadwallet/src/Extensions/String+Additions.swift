@@ -15,10 +15,6 @@ extension String {
         return BRAddressIsValid(self) != 0
     }
 
-    var isValidBCHAddress: Bool {
-        return isValidAddress
-    }
-
     var sanitized: String {
         return applyingTransform(.toUnicodeName, reverse: false) ?? ""
     }
