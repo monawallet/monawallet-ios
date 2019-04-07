@@ -1,4 +1,4 @@
-﻿//
+//
 //  AccountFooterView.swift
 //  breadwallet
 //
@@ -51,8 +51,10 @@ class AccountFooterView: UIView {
         addSubview(receive)
         addSubview(menu)
         
-        send.isEnabled = checkPaperKeyStatus()
-        receive.isEnabled = checkPaperKeyStatus()
+        #if !Debug
+            send.isEnabled = checkPaperKeyStatus()
+            receive.isEnabled = checkPaperKeyStatus()
+        #endif
 
         send.constrain([
                 send.constraint(.leading, toView: self, constant: 0.0),
