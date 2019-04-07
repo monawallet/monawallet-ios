@@ -42,7 +42,7 @@ class BiometricsSpendingLimitViewController: UITableViewController, Subscriber {
         titleLabel.sizeToFit()
         navigationItem.titleView = titleLabel
 
-        let faqButton = UIButton.buildFaqButton(store: store, articleId: E.isIPhoneX ? ArticleIds.faceIdSpendingLimit : ArticleIds.touchIdSpendingLimit)
+        let faqButton = UIButton.buildFaqButton(store: store, articleId: E.isIPhoneXSeries ? ArticleIds.faceIdSpendingLimit : ArticleIds.touchIdSpendingLimit)
         faqButton.tintColor = .darkText
         navigationItem.rightBarButtonItems = [UIBarButtonItem.negativePadding, UIBarButtonItem(customView: faqButton)]
 
