@@ -86,7 +86,7 @@ class AboutViewController : UIViewController {
             myself.presentURL(string: "https://monawallet.net/")
         }
         twitter.button.tap = strongify(self) { myself in
-            myself.presentURL(string: "https://mobile.twitter.com/mona_wallet/")
+            myself.presentURL(string: "https://mobile.twitter.com/MonaWallet/")
         }
         discord.button.tap = strongify(self) { myself in
             myself.presentURL(string: "https://discordapp.com/invite/tQ2NpJ5")
