@@ -19,7 +19,7 @@ class TransactionDetailsViewController : UICollectionViewController, Subscriber 
         self.isBtcSwapped = store.state.isBtcSwapped
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: UIScreen.main.safeWidth-C.padding[4],
-                                 height: E.isIPhoneX ? UIScreen.main.bounds.height - C.padding[10] : UIScreen.main.bounds.height - C.padding[1])
+                                 height: E.isIPhoneXSeries ? UIScreen.main.bounds.height - C.padding[10] : UIScreen.main.bounds.height - C.padding[1])
         layout.sectionInset = UIEdgeInsetsMake(C.padding[1], 0, 0, 0)
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = C.padding[1]

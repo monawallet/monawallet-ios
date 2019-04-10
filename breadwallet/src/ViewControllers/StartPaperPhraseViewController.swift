@@ -69,7 +69,7 @@ class StartPaperPhraseViewController : UIViewController {
             illustration.constraint(.width, constant: 64.0),
             illustration.constraint(.height, constant: 84.0),
             illustration.centerXAnchor.constraint(equalTo: header.centerXAnchor),
-            illustration.centerYAnchor.constraint(equalTo: header.centerYAnchor, constant: E.isIPhoneX ? C.padding[4] : C.padding[2]) ])
+            illustration.centerYAnchor.constraint(equalTo: header.centerYAnchor, constant: E.isIPhoneXSeries ? C.padding[4] : C.padding[2]) ])
         pencil.constrain([
             pencil.constraint(.width, constant: 32.0),
             pencil.constraint(.height, constant: 32.0),

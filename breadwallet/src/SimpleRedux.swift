@@ -175,10 +175,8 @@ class Store {
     }
 
     func unsubscribe(_ subscriber: Subscriber) {
-        DispatchQueue.main.async {
-            self.subscriptions.removeValue(forKey: subscriber.hashValue)
-            self.triggers.removeValue(forKey: subscriber.hashValue)
-        }
+        self.subscriptions.removeValue(forKey: subscriber.hashValue)
+        self.triggers.removeValue(forKey: subscriber.hashValue)
     }
 
     //MARK: - Private
@@ -192,10 +190,8 @@ class Store {
     }
 
     func removeAllSubscriptions() {
-        DispatchQueue.main.async {
-            self.subscriptions.removeAll()
-            self.triggers.removeAll()
-        }
+        self.subscriptions.removeAll()
+        self.triggers.removeAll()
     }
 
     private var subscriptions: [Int: [Subscription]] = [:]

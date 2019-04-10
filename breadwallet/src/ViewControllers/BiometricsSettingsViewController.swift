@@ -65,7 +65,7 @@ class BiometricsSettingsViewController : UIViewController, Subscriber {
         header.constrain([header.heightAnchor.constraint(equalToConstant: C.Sizes.largeHeaderHeight)])
         illustration.constrain([
             illustration.centerXAnchor.constraint(equalTo: header.centerXAnchor),
-            illustration.centerYAnchor.constraint(equalTo: header.centerYAnchor, constant: E.isIPhoneX ? C.padding[4] : C.padding[2]) ])
+            illustration.centerYAnchor.constraint(equalTo: header.centerYAnchor, constant: E.isIPhoneXSeries ? C.padding[4] : C.padding[2]) ])
         label.constrain([
             label.leadingAnchor.constraint(equalTo: header.leadingAnchor, constant: C.padding[2]),
             label.topAnchor.constraint(equalTo: header.bottomAnchor, constant: C.padding[2]),
@@ -124,7 +124,7 @@ class BiometricsSettingsViewController : UIViewController, Subscriber {
     private func addFaqButton() {
         let negativePadding = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
         negativePadding.width = -16.0
-        let faqButton = UIButton.buildFaqButton(store: store, articleId: E.isIPhoneX ? ArticleIds.enableFaceId : ArticleIds.enableTouchId)
+        let faqButton = UIButton.buildFaqButton(store: store, articleId: E.isIPhoneXSeries ? ArticleIds.enableFaceId : ArticleIds.enableTouchId)
         faqButton.tintColor = .white
         navigationItem.rightBarButtonItems = [negativePadding, UIBarButtonItem(customView: faqButton)]
     }

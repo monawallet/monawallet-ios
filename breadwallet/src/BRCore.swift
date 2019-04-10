@@ -159,7 +159,7 @@ extension BRKey {
             let count = BRKeyPrivKey(&self, nil, 0)
             var data = CFDataCreateMutable(secureAllocator, count) as Data
             data.count = count
-            guard data.withUnsafeMutableBytes({ BRKeyPrivKey(&self, $0, data.count) }) != 0 else { return nil }
+            guard data.withUnsafeMutableBytes({ BRKeyPrivKey(&self, $0, count) }) != 0 else { return nil }
             return CFStringCreateFromExternalRepresentation(secureAllocator, data as CFData,
                                                             CFStringBuiltInEncodings.UTF8.rawValue) as String
         }
@@ -174,7 +174,7 @@ extension BRKey {
             let count = BRKeyBIP38Key(&self, nil, 0, nfcPhrase as String)
             var data = CFDataCreateMutable(secureAllocator, count) as Data
             data.count = count
-            guard data.withUnsafeMutableBytes({ BRKeyBIP38Key(&self, $0, data.count, nfcPhrase as String) }) != 0
+            guard data.withUnsafeMutableBytes({ BRKeyBIP38Key(&self, $0, count, nfcPhrase as String) }) != 0
                 else { return nil }
             return CFStringCreateFromExternalRepresentation(secureAllocator, data as CFData,
                                                             CFStringBuiltInEncodings.UTF8.rawValue) as String
@@ -532,11 +532,13 @@ protocol BRPeerManagerListener {
 class BRPeerManager {
     let cPtr: OpaquePointer
     let listener: BRPeerManagerListener
+    let mainNetParams = [BRMainNetParams]
+    let testNetParams = [BRTestNetParams]
     
     init?(wallet: BRWallet, earliestKeyTime: TimeInterval, blocks: [BRBlockRef?], peers: [BRPeer],
           listener: BRPeerManagerListener) {
         var blockRefs = blocks
-        guard let cPtr = BRPeerManagerNew(wallet.cPtr, UInt32(earliestKeyTime + NSTimeIntervalSince1970),
+        guard let cPtr = BRPeerManagerNew(E.isTestnet ? testNetParams: mainNetParams, wallet.cPtr, UInt32(earliestKeyTime + NSTimeIntervalSince1970),
                                           &blockRefs, blockRefs.count, peers, peers.count) else { return nil }
         self.listener = listener
         self.cPtr = cPtr
@@ -578,7 +580,7 @@ class BRPeerManager {
     
     // true if currently connected to at least one peer
     var isConnected: Bool {
-        return BRPeerManagerIsConnected(cPtr) != 0
+        return BRPeerManagerConnectStatus(cPtr) == BRPeerStatusConnected
     }
     
     // connect to bitcoin peer-to-peer network (also call this whenever networkIsReachable() status changes)
@@ -681,6 +683,14 @@ class BRPeerManager {
             self.completion = completion
         }
     }
+    
+    //hack to keep the swift compiler happy
+    let a = BRMainNetDNSSeeds
+    let b = BRMainNetCheckpoints
+    let c = BRMainNetVerifyDifficulty
+    let d = BRTestNetDNSSeeds
+    let e = BRTestNetCheckpoints
+    let f = BRTestNetVerifyDifficulty
 }
 
 extension UInt256 : CustomStringConvertible {

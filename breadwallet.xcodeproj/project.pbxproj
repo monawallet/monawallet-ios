@@ -258,8 +258,6 @@
 		CE3D4C571EF5D5740016B1C8 /* ReachabilityMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D4C561EF5D5740016B1C8 /* ReachabilityMonitor.swift */; };
 		CE3D4C591EF743EF0016B1C8 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D4C581EF743EF0016B1C8 /* Functions.swift */; };
 		CE44BA1B1F33BFC500392A1A /* NodeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44BA1A1F33BFC500392A1A /* NodeSelectorViewController.swift */; };
-		CE44BA1D1F35102D00392A1A /* BCashTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44BA1C1F35102D00392A1A /* BCashTransactionViewController.swift */; };
-		CE44BA1F1F353AB200392A1A /* WalletManager+BCash.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44BA1E1F353AB200392A1A /* WalletManager+BCash.swift */; };
 		CE45C1F91E74B400002C3847 /* ManageWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45C1F81E74B400002C3847 /* ManageWalletViewController.swift */; };
 		CE45C1FB1E74F89C002C3847 /* WalletInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45C1FA1E74F89C002C3847 /* WalletInfo.swift */; };
 		CE45C1FD1E7650F5002C3847 /* KVStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE45C1FC1E7650F5002C3847 /* KVStoreCoordinator.swift */; };
@@ -425,6 +423,7 @@
 		CEF61B141ED0D10000C7EA6A /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF61B131ED0D10000C7EA6A /* Types.swift */; };
 		CEF61B161ED2056D00C7EA6A /* NumberFormatter+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF61B151ED2056D00C7EA6A /* NumberFormatter+Additions.swift */; };
 		CEFFA2D11EB3BD730085C5D1 /* LoadingIndicator.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFFA2D01EB3BD730085C5D1 /* LoadingIndicator.xcassets */; };
+		F5C851502257462B00BC9955 /* BRBech32.c in Sources */ = {isa = PBXBuildFile; fileRef = F5C8514F2257462B00BC9955 /* BRBech32.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1387,8 +1386,6 @@
 		CE3D4C561EF5D5740016B1C8 /* ReachabilityMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReachabilityMonitor.swift; path = src/ReachabilityMonitor.swift; sourceTree = "<group>"; };
 		CE3D4C581EF743EF0016B1C8 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Functions.swift; path = src/Constants/Functions.swift; sourceTree = "<group>"; };
 		CE44BA1A1F33BFC500392A1A /* NodeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NodeSelectorViewController.swift; path = src/ViewControllers/NodeSelectorViewController.swift; sourceTree = "<group>"; };
-		CE44BA1C1F35102D00392A1A /* BCashTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BCashTransactionViewController.swift; path = src/ViewControllers/BCashTransactionViewController.swift; sourceTree = "<group>"; };
-		CE44BA1E1F353AB200392A1A /* WalletManager+BCash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "WalletManager+BCash.swift"; path = "src/WalletManager+BCash.swift"; sourceTree = "<group>"; };
 		CE45C1F81E74B400002C3847 /* ManageWalletViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ManageWalletViewController.swift; path = src/ViewControllers/RootModals/ManageWalletViewController.swift; sourceTree = "<group>"; };
 		CE45C1FA1E74F89C002C3847 /* WalletInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WalletInfo.swift; path = src/Platform/WalletInfo.swift; sourceTree = "<group>"; };
 		CE45C1FC1E7650F5002C3847 /* KVStoreCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KVStoreCoordinator.swift; path = src/KVStoreCoordinator.swift; sourceTree = "<group>"; };
@@ -1567,6 +1564,9 @@
 		CEF61B131ED0D10000C7EA6A /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Types.swift; path = src/Models/Types.swift; sourceTree = "<group>"; };
 		CEF61B151ED2056D00C7EA6A /* NumberFormatter+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NumberFormatter+Additions.swift"; path = "src/Extensions/NumberFormatter+Additions.swift"; sourceTree = "<group>"; };
 		CEFFA2D01EB3BD730085C5D1 /* LoadingIndicator.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LoadingIndicator.xcassets; sourceTree = "<group>"; };
+		F5C8514D2257462A00BC9955 /* BRChainParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRChainParams.h; sourceTree = "<group>"; };
+		F5C8514E2257462A00BC9955 /* BRBech32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRBech32.h; sourceTree = "<group>"; };
+		F5C8514F2257462B00BC9955 /* BRBech32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = BRBech32.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2566,7 +2566,6 @@
 				754AE0BB1DFE8A46007FD001 /* BRCore.swift */,
 				75519F331DC7D20500EDF66C /* WalletManager.swift */,
 				7503773C1DF57428005EB8AE /* WalletManager+Auth.swift */,
-				CE44BA1E1F353AB200392A1A /* WalletManager+BCash.swift */,
 				CE4B6C191E219CA600CF935B /* WalletCoordinator.swift */,
 				CEE659E61F65A936001FF29D /* RetryTimer.swift */,
 				CE8CD8DC1E2D9EF200785E02 /* Sender.swift */,
@@ -2741,6 +2740,8 @@
 				75DC77B01DAA05B500932D9A /* BRArray.h */,
 				75DC77B11DAA05B500932D9A /* BRBase58.c */,
 				75DC77B21DAA05B500932D9A /* BRBase58.h */,
+				F5C8514F2257462B00BC9955 /* BRBech32.c */,
+				F5C8514E2257462A00BC9955 /* BRBech32.h */,
 				75DC77B31DAA05B500932D9A /* BRBIP32Sequence.c */,
 				75DC77B41DAA05B500932D9A /* BRBIP32Sequence.h */,
 				75DC77B51DAA05B500932D9A /* BRBIP38Key.c */,
@@ -2752,6 +2753,7 @@
 				75DC77BB1DAA05B500932D9A /* BRBloomFilter.h */,
 				75DC77BC1DAA05B500932D9A /* BRCrypto.c */,
 				75DC77BD1DAA05B500932D9A /* BRCrypto.h */,
+				F5C8514D2257462A00BC9955 /* BRChainParams.h */,
 				75DC77BE1DAA05B500932D9A /* BRInt.h */,
 				75DC77BF1DAA05B500932D9A /* BRKey.c */,
 				75DC77C01DAA05B500932D9A /* BRKey.h */,
@@ -2830,7 +2832,6 @@
 				CEA05CC21F21B53C00D850F0 /* FeeSelector.swift */,
 				CE8644241F2C160200033129 /* ConfirmationViewController.swift */,
 				CE44BA1A1F33BFC500392A1A /* NodeSelectorViewController.swift */,
-				CE44BA1C1F35102D00392A1A /* BCashTransactionViewController.swift */,
 				CEE659E81F664C73001FF29D /* WelcomeViewController.swift */,
 				CE5C7B4A2000F3FB0005B206 /* BiometricsSpendingLimitViewController.swift */,
 				CE5C7B492000F3FB0005B206 /* BiometricsSettingsViewController.swift */,
@@ -3841,6 +3842,7 @@
 				CEE0EF521EBD14B60018DB36 /* PinTransitioningDelegate.swift in Sources */,
 				CE45C1FD1E7650F5002C3847 /* KVStoreCoordinator.swift in Sources */,
 				754AE0BC1DFE8A46007FD001 /* BRCore.swift in Sources */,
+				F5C851502257462B00BC9955 /* BRBech32.c in Sources */,
 				22A9A94A1DF61945000F0016 /* BRCameraPlugin.swift in Sources */,
 				CEC6AA3B1DEE4EB000EE5AFD /* CGRect+Additions.swift in Sources */,
 				CE45C1FB1E74F89C002C3847 /* WalletInfo.swift in Sources */,
@@ -3862,7 +3864,6 @@
 				2228734D1E916F7C0044BA15 /* BRAPIClient+Features.swift in Sources */,
 				22A9A94D1DF61945000F0016 /* BRHTTPFileMiddleware.swift in Sources */,
 				CE8644251F2C160200033129 /* ConfirmationViewController.swift in Sources */,
-				CE44BA1D1F35102D00392A1A /* BCashTransactionViewController.swift in Sources */,
 				CEBF32F01DDCD30600348FC6 /* AccountViewController.swift in Sources */,
 				CEE1F5631DF13E5A00D733AD /* ModalHeaderView.swift in Sources */,
 				CE5F21DB1E4A93A500C47B8E /* LoginTransitionDelegate.swift in Sources */,
@@ -3970,7 +3971,6 @@
 				CE124CF81E67A8E500DFA146 /* TransactionDirection.swift in Sources */,
 				CE8CD8DD1E2D9EF200785E02 /* Sender.swift in Sources */,
 				CE4DFB2C1E9BE5880014009E /* ReScanViewController.swift in Sources */,
-				CE44BA1F1F353AB200392A1A /* WalletManager+BCash.swift in Sources */,
 				CE8F0AE31EB91BB500AA7642 /* SearchHeaderView.swift in Sources */,
 				22A9A9551DF61945000F0016 /* BRTar.swift in Sources */,
 				CE14E4091E4D506000AEA83A /* TransactionDetailsViewController.swift in Sources */,
