@@ -1,4 +1,4 @@
-﻿//
+//
 //  PaymentRequest.swift
 //  breadwallet
 //
@@ -118,5 +118,6 @@ private func convertToBTC(fromSatoshis: UInt64) -> String {
     var decimal = Decimal(fromSatoshis)
     var amount: Decimal = 0.0
     NSDecimalMultiplyByPowerOf10(&amount, &decimal, -8, .up)
-    return NSDecimalNumber(decimal: amount).stringValue
+    let amountStr: String = NSDecimalNumber(decimal: amount).stringValue
+    return amountStr.roundSatoshi(trimStr: amountStr)
 }

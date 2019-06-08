@@ -89,6 +89,21 @@ extension String {
     }
 }
 
+private let decimalPoint = "."
+
+extension String {
+    func roundSatoshi(trimStr: String) -> String {
+        if trimStr.contains(decimalPoint) {
+            var strs = trimStr.components(separatedBy: decimalPoint)
+            if strs[1].count > 8 {
+                strs[1] = String(strs[1].prefix(8))
+                return strs.joined(separator: decimalPoint)
+            }
+        }
+        return trimStr
+    }
+}
+
 extension UnicodeScalar {
     var nibble: UInt8? {
         if 48 <= value && value <= 57 {
